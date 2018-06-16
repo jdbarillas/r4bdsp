@@ -1,0 +1,14 @@
+# (PART) Specific Topics {-}
+
+# Introduction {#topics-intro}
+
+This part of the book provides tutorials on specific topics using R. These tutorials are written and curated by scholarship participants. 
+
+We will be using a shared repository model. Therefore, you can contribute to the book by following these steps:
+
+1. Clone [the book repo](https://github.com/jdbarillas/r4bdsp) from GitHub.
+2. Create a separate branch for your topic
+3. Add the file(s) to the proper directories and commit the changes to your topic branch 
+4. Push the changes to GitHub and submit a [pull request](https://help.github.com/articles/about-pull-requests/)
+
+For information on the shared repository model, see [here](https://gist.github.com/seshness/3943237) and [here](https://github.com/NuCivic/nucivic-process/wiki/Github-Shared-Repository-Model).
