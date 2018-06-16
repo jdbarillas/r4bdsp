@@ -1,0 +1,9 @@
+new_session: yes
+
+rmd_files: [
+  "index.rmd",
+  
+  "sql.Rmd",
+  
+  "topics.Rmd"
+  ]
