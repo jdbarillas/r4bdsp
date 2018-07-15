@@ -5,9 +5,17 @@
 This portion of the book focuses on translating Lessons 28-32 of the Bertelsmann Data Science Scholarship Program. These lessons provide the foundation for working with databases using  Structured Query Language (SQL). Like the lessons within the scholarship program, we will using data from the fictional Parch and Posey company. You can access this data by installing the parchposey package from GitHub:
 
 ```{r, eval=FALSE}
+# Be sure to have the devtools package
+install.packages("devtools")
+
+# Then use devtools to install the package from GitHub
 devtools::install_github("jdbarillas/parchposey")
 ```
 
-You will learn how to recreate the analyses in R using the `dplyr` package from the `tidyverse` in the following ways:
+You will learn how to recreate the SQL queries in R using the `dplyr` package from the `tidyverse` in the following ways:
 
-* `dplyr` provides a set of verbs that are combined to solve data manipulation problems. 
+* `dplyr` provides a set of verbs that are combined to solve data manipulation problems. In the **Basic SQL** lesson, you learned about common statements used in SQL such as `SELECT`, `LIMIT`, and more. In [Basic dplyr], you will learn how to translate these common statements to R using dplyr functions.  
+
+In order to get the most of the lessons, you should become familiar with the following:
+
+ * The pipe operator (`%>%`) from the `magrittr` package: The purpose of `%>%` is to 'pipe' an object forward into a function or expression. For example, `data %>% ...` can be read as *take the object `data` and **THEN** do something else with it...*. Loading dplyr also loads in the pipe operator so you don't need to load magrittr as well. Usage of the pipe will lead to concise code that's easy to follow. For more information on the pipe, refer to the [Pipes](http://r4ds.had.co.nz/pipes.html) chapter in [R for Data Science](http://r4ds.had.co.nz/)

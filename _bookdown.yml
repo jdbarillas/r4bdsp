@@ -6,6 +6,7 @@ rmd_files: [
   "index.rmd",
   
   "sql.Rmd",
+  "basic_dplyr.Rmd",
   
   "topics.Rmd"
   ]

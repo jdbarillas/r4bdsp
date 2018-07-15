@@ -1,0 +1,9 @@
+bookdown::gitbook:
+  config:
+    toc:
+    collapse: section
+  sharing: no
+  df_print: paged
+
+bookdown::pdf_book:
+  latex_engine: "xelatex"

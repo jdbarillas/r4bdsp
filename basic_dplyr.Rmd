@@ -1,0 +1,142 @@
+---
+output: 
+  html_document: 
+    df_print: paged
+---
+# Basic dplyr
+
+## Introduction
+
+This chapter will mimic the **Basic SQL** lesson by using function from the dplyr package. As specified in the [introduction](#sql-intro), the dplyr verbs are best when used with the pipe-operator `%>%`. 
+
+We will using Parch and Posey data in this and all other SQL lessons, so make sure that the `parchposey` package is installed and loaded. The same applies to the `dplyr` package.
+
+```{r, message=FALSE, warning=FALSE}
+# Load the parchposey and dplyr packages
+library(parchposey)
+library(dplyr)
+```
+
+
+## Importing Parch and Posey data 
+
+Now that you've loaded `parchposey`, you're able to load the necessary tables into R using the `data(table_name)` function. For example, `data(orders)` will load the __*orders*__ table into your environment. Below you can see that the table has been loaded and that it contains the same variable as the tables in the SQL editor. 
+
+```{r}
+data("orders") # Add the orders table to you environment
+glimpse(orders) # Get a glimpse of the loaded table
+```
+
+## Select columns from tables with `select()`
+
+From the **Basic SQL** lesson, we know that every SQL query will at least have a `SELECT` and `FROM` statement. We will follow the same convention for now while introducing our first dplyr verb function: `select`.
+
+> `select()` is able to take 2 arguments:  
+1. `.data` which points to a table  
+2. the columns to select. 
+
+To see how this works, let's use `select` with the **orders** table as the value for `.data` but no other values.
+
+```{r, rows.print=5}
+select(.data = orders)
+# Translates to:
+## SELECT FROM orders: 
+```
+
+As you can see, the function returned the full table with 6,912 rows but no columns. This is because `select` is usually used to keep only the columns specified within the function. Therefore, since no columns were specified then no columns were returned. 
+
+However, there are a number of special "helper" functions that work inside the function to select columns based on different criteria. One such helper function, `everything()`, is the equivalent to the asterisk (*) used in a query to select all columns within a table.
+
+Therefore, the following SQL query
+```{sql, eval=FALSE}
+SELECT * 
+FROM orders
+```
+is equivalent to 
+```{r, eval=FALSE}
+select(.data = orders, everything())
+# SELECT FROM orders: everything!
+```
+or using the pipe
+```{r, eval=FALSE}
+orders %>% 
+  select(everything())
+# FROM orders, SELECT everything!
+```
+```{r, echo=FALSE, rows.print=5}
+orders %>% 
+  select(everything())
+```
+
+You may have noticed the change in order in the last chunk of code, where the name of the table comes before the verb. 
+
+The reason for doing this is to facilitate the reading of the code for someone who may not have a background in programming. We know that **orders** is a table within our environment and that the `%>%` operator can be read as *THEN*. Putting these together we can read the above as:
+
+> Take the *orders* table and **THEN**  
+> &nbsp;&nbsp;**select** everything within the table
+
+We don't need to limit ourselves to only one pipe within a call. We can keep adding functions as actions to be taken on the **orders** table. 
+
+Remember that for both SQL and R, the `SELECT/select()` statement/function is where you put the **columns** for which you would like to show the data. 
+
+**Your Turn**
+
+```{r include = FALSE}
+library(DBI)
+# Create an in-memory MonetDBLite database
+con <- dbConnect(MonetDBLite::MonetDBLite())
+# Write the data from the orders object into the MonetDBLite database
+dbWriteTable(con, "orders", orders)
+# Load in web_events data
+data("web_events")
+# Write the data from the web_events object into the MonetDBLite database
+dbWriteTable(con, "web_events", web_events)
+```
+
+Convert the following query to R code. Make sure the R output matches the SQL output and try to use the `%>%` operator. Protip: In RStudio, use *CTRL+SHIFT+M* to add a pipe. 
+
+```{sql connection=con, rows.print=5}
+SELECT id, account_id, occurred_at
+FROM orders
+```
+
+```{r, rows.print=5}
+orders %>% 
+  select(id, account_id, occurred_at)
+```
+
+## Limit the number of rows returned with `head()`
+
+As you were taught in the course, the **LIMIT** statement is useful when you want to see just the first few rows of a table. In SQL, this can be much faster for loading than if we load the entire dataset. This statement also holds true within R.
+
+For example, the following query will return all columns for the first 3 rows from the orders table.
+
+```{sql, connection=con}
+SELECT *
+FROM orders
+LIMIT 3;
+```
+
+The equivalent function in R is `head()`, where the argument needed is the number of rows to return. To show just the first 10 rows of the orders table with all columns, you could write the following code: 
+
+```{r}
+orders %>% 
+  select(everything()) %>% 
+  head(3)
+```
+
+**Your Turn**
+
+Convert the following query to R code. Make sure the R output matches the SQL output.
+
+```{sql connection=con}
+SELECT *
+FROM web_events
+LIMIT 15
+```
+
+```{r}
+web_events %>% 
+  select(everything()) %>% 
+head(15)
+```
