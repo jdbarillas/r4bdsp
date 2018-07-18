@@ -4,7 +4,15 @@
 
 This part of the book provides tutorials on specific topics using R. These tutorials are written and curated by scholarship participants. 
 
-We will be using a shared repository model. Therefore, you can contribute to the book by following these steps:
+## Contributors
+
+### Jolynn - [Udacity Even Lessons](#topics-lessons)
+
+My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/)
+
+### How to contribute
+
+We are using a shared repository model. Therefore, you can contribute to the book by following these steps:
 
 1. Clone [the book repo](https://github.com/jdbarillas/r4bdsp) from GitHub.
 2. Create a separate branch for your topic
