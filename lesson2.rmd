@@ -1,4 +1,6 @@
-# Jolynn Schmidt 
+# Jolynn
+
+Bio/Motivation/Social Handles
 
 ## Lesson 2 Visualization
 
