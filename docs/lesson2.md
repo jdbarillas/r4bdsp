@@ -7,7 +7,8 @@ In this exercise we will start by looking at the characteristics of our dataset.
 
 ### Data
 We start by assigning our data to Petals, a list of petal counts from flowers.
-```{r}
+
+```r
 Petals <- c(15, 16, 17,
             16, 21, 22,
             15, 16, 15,
@@ -24,7 +25,8 @@ Petals <- c(15, 16, 17,
 ### Frequency
 The frequency of a data set is the number of times a certain outcome occurs.
 
-```{r}
+
+```r
 # Find the most frequent petal count.
 # to do this we create a table from Petals, sort it in decreasing order, and get the name of the first item.
 
@@ -32,18 +34,28 @@ MostFreq <- names(sort(table(Petals),decreasing=TRUE)[1])
 print(paste0("The most frequent petal count is: ", MostFreq))
 ```
 
-```{r}
+```
+## [1] "The most frequent petal count is: 15"
+```
+
+
+```r
 # Find the frequency of flowers with 15 petals.
 # We can use the same method as above but without the names
 PetalFreq <- sort(table(Petals),decreasing=TRUE)[1]
 print(paste0("The frequency of flowers with 15 petals is: ", PetalFreq))
 ```
 
+```
+## [1] "The frequency of flowers with 15 petals is: 9"
+```
+
 
 ### Proportions
 A proportion is the fraction of counts over the total sample.
 
-```{r}
+
+```r
 # Find the proportion of flowers with 15 petals
 
 TotalSample <- length(Petals)
@@ -51,32 +63,47 @@ PetalProp <- PetalFreq/TotalSample
 print(paste0("The proportion of flowers with 15 petals is: ", PetalProp))
 ```
 
+```
+## [1] "The proportion of flowers with 15 petals is: 0.3"
+```
+
 
 ### Percentage
 A proportion can be turned into a percentage by multiplying the proportion by 100.
 
-```{r}
+
+```r
 # Find the percentage of flowers with 15 petals
 
 PetalPerc <- PetalProp * 100
 print(paste0("The percentage of flowers with 15 petals is: ", PetalPerc, "%"))
 ```
 
+```
+## [1] "The percentage of flowers with 15 petals is: 30%"
+```
+
 
 ### Histogram
 A histogram is a graphical representation of the distribution of data, discrete intervals (bins) are decided upon to form widths for our boxes. R has the hist() function to make basic histograms. Here are some very simple examples.
 
-```{r}
+
+```r
 # Create a histogram with a bin size of 2
 hist(Petals, breaks = (length(Petals)/2), col = "blue")
 ```
 
-```{r}
+<img src="lesson2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
+
+```r
 # Create a histogram with a bin size of 5
 bins <- c(10,15,20,25,30)
 #hist(Petals, breaks = (length(Petals)/5))
 hist(Petals, breaks = bins, col = "orange")
 ```
+
+<img src="lesson2_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 
 ### Skew

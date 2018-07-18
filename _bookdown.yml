@@ -3,9 +3,12 @@ new_session: yes
 output_dir: "docs"
 
 rmd_files: [
-  "index.rmd",
+  "index.Rmd",
   
   "sql.Rmd",
   
-  "topics.Rmd"
+  "topics.Rmd",
+    "lesson2.rmd",
+    "lesson4.rmd",
+    "lesson6.rmd"
   ]

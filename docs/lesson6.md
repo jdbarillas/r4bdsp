@@ -2,7 +2,8 @@
 ## Lesson 6 Normal Distribution
 
 In this exercise we will find the probability of a given observation within a normal distribution. All definitions and data come from the original Udacity lesson and can be found [here.](https://storage.googleapis.com/supplemental_media/udacityu/1478678538/Lesson6.pdf "Lesson6.pdf")
-```{r}
+
+```r
 #install.packages("ggfortify")
 #library(ggfortify)
 ```
@@ -11,7 +12,8 @@ In this exercise we will find the probability of a given observation within a no
 The probability distribution function is a normal curve with an area of 1 beneath it, to represent the cumulative frequency of values.
 
 #### Data
-```{r}
+
+```r
 mean=1.85; sd=.15
 lb=1.7; ub=2
 
@@ -20,14 +22,15 @@ x <- seq(-4,4,length=100)*sd + mean
 hx <- dnorm(x,mean,sd)
 ```
 #### Create a density plot
-```{r}
 
+```r
 plot(x, hx, type="n", xlab="Student Height Values", ylab="Density",
   main="Probability Distribution")
 lines(x, hx)
 polygon(c(lb,x,ub), c(0,hx,0), col="blue") 
-
 ```
+
+<img src="lesson6_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ### Finding the probability
 If given an observation, you can find the probability and show the area below, above, and between particular observations. To do this you must first calculated the z-score
@@ -38,12 +41,16 @@ If given an observation, you can find the probability and show the area below, a
 $$ z=\frac{x-\mu}{\sigma}$$
 The z-score is calculated  by taking the observation minus the mean and dividing by the standard deviation. If given an observation of 2.05 meters the z-score would be calculated  as follows:
 
-```{r}
+
+```r
 obs1 <- 2.05
 obs1_zscore <- round((obs1 - mean)/sd, 2)
 
 print(paste0("The Z-Score for a student with the Height of 2.05 meters is: ", obs1_zscore))
+```
 
+```
+## [1] "The Z-Score for a student with the Height of 2.05 meters is: 1.33"
 ```
 
 #### Proportion using a z-table
@@ -54,17 +61,21 @@ We can calculate this in R using the pnorm function. It will give a more exact n
 
 #### Proportion using pnorm
 
-```{r}
+
+```r
 #you can also use pnorm to get the proportion rather than looking it up in a z-table
 obs1_spor <- round(pnorm(obs1, mean, sd),4)
 print(paste0("The proportion of students shorter than 2.05 meters is: ", obs1_spor))
+```
 
+```
+## [1] "The proportion of students shorter than 2.05 meters is: 0.9088"
 ```
 
 #### Plotting the percentage
 By multiplying the proportion by 100 you can get the percentage of students that are shorter than 2.05 meters. You can also find the percentage of students that are taller than 2.05 meters by subtracting the proportion from 1.
-```{r}
 
+```r
 # a plot of the data
 plot(x, hx, type="n", xlab="Student Height Values", ylab="Density",
   main="Percentage above and below 2.05 meters")
@@ -85,10 +96,13 @@ text(1.8,.3, labels = shorter_obs1, col = "white")
 text(2.1,.3, labels = taller_obs1, col = "blue")
 ```
 
+<img src="lesson6_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
 #### Proportion of a range
 You can find the proportion of students that fall between a given range by subtraction the proportion of the first observation from the proportion of the second observation.
 
-```{r}
+
+```r
 obs2 <- 1.87
 obs2_spor <- round(pnorm(obs2, mean, sd),4)
 
@@ -109,5 +123,6 @@ polygon(c(obs2,x[i_diff],obs1), c(0,hx[i_diff],0), col="blue")
 between_obs <- round((obs1_spor - obs2_spor) * 100, 2)
 
 text(1.95,.3, labels = between_obs, col = "white")
-
 ```
+
+<img src="lesson6_files/figure-html/unnamed-chunk-7-1.png" width="672" />
