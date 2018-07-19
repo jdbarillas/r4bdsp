@@ -1,7 +1,5 @@
 # Udacity Even Lessons {#topics-lessons}
 
-Bio/Motivation/Social Handles
-
 ## Lesson 2 Visualization
 
 In this exercise we will start by looking at the characteristics of our dataset. All definitions and data come from the original Udacity lesson and can be found [here.](https://www.udacity.com/api/nodes/1480558581/supplemental_media/lesson2pdf/download "Lesson2.pdf")

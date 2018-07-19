@@ -1,6 +1,6 @@
 # (PART) Specific Topics {-}
 
-# Introduction {#topics-intro}
+# Introduction
 
 This part of the book provides tutorials on specific topics using R. These tutorials are written and curated by scholarship participants. 
 
