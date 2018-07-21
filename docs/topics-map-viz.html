@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R for the Bertelsmann Data Science Scholarship Program</title>
+  <meta name="description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="R for the Bertelsmann Data Science Scholarship Program" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R." />
+  <meta name="github-repo" content="jdbarillas/r4bdsp" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R for the Bertelsmann Data Science Scholarship Program" />
+  
+  <meta name="twitter:description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R." />
+  
+
+<meta name="author" content="TBD">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="topics-lessons.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I SQL</b></span></li>
+<li class="chapter" data-level="1" data-path="sql-intro.html"><a href="sql-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="part"><span><b>II Specific Topics</b></span></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#contributors"><i class="fa fa-check"></i><b>2.1</b> Contributors</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#afton---map-visualizations"><i class="fa fa-check"></i><b>2.1.1</b> Afton - <span>Map Visualizations</span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#jolynn---udacity-even-lessons"><i class="fa fa-check"></i><b>2.1.2</b> Jolynn - <span>Udacity Even Lessons</span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#how-to-contribute"><i class="fa fa-check"></i><b>2.1.3</b> How to contribute</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="topics-lessons.html"><a href="topics-lessons.html"><i class="fa fa-check"></i><b>3</b> Udacity Even Lessons</a><ul>
+<li class="chapter" data-level="3.1" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-2-visualization"><i class="fa fa-check"></i><b>3.1</b> Lesson 2 Visualization</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="topics-lessons.html"><a href="topics-lessons.html#data"><i class="fa fa-check"></i><b>3.1.1</b> Data</a></li>
+<li class="chapter" data-level="3.1.2" data-path="topics-lessons.html"><a href="topics-lessons.html#frequency"><i class="fa fa-check"></i><b>3.1.2</b> Frequency</a></li>
+<li class="chapter" data-level="3.1.3" data-path="topics-lessons.html"><a href="topics-lessons.html#proportions"><i class="fa fa-check"></i><b>3.1.3</b> Proportions</a></li>
+<li class="chapter" data-level="3.1.4" data-path="topics-lessons.html"><a href="topics-lessons.html#percentage"><i class="fa fa-check"></i><b>3.1.4</b> Percentage</a></li>
+<li class="chapter" data-level="3.1.5" data-path="topics-lessons.html"><a href="topics-lessons.html#histogram"><i class="fa fa-check"></i><b>3.1.5</b> Histogram</a></li>
+<li class="chapter" data-level="3.1.6" data-path="topics-lessons.html"><a href="topics-lessons.html#skew"><i class="fa fa-check"></i><b>3.1.6</b> Skew</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-4-variability"><i class="fa fa-check"></i><b>3.2</b> Lesson 4 Variability</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="topics-lessons.html"><a href="topics-lessons.html#data-1"><i class="fa fa-check"></i><b>3.2.1</b> Data</a></li>
+<li class="chapter" data-level="3.2.2" data-path="topics-lessons.html"><a href="topics-lessons.html#interquartile-range"><i class="fa fa-check"></i><b>3.2.2</b> Interquartile range</a></li>
+<li class="chapter" data-level="3.2.3" data-path="topics-lessons.html"><a href="topics-lessons.html#box-plot"><i class="fa fa-check"></i><b>3.2.3</b> Box Plot</a></li>
+<li class="chapter" data-level="3.2.4" data-path="topics-lessons.html"><a href="topics-lessons.html#outliers"><i class="fa fa-check"></i><b>3.2.4</b> Outliers</a></li>
+<li class="chapter" data-level="3.2.5" data-path="topics-lessons.html"><a href="topics-lessons.html#variance"><i class="fa fa-check"></i><b>3.2.5</b> Variance</a></li>
+<li class="chapter" data-level="3.2.6" data-path="topics-lessons.html"><a href="topics-lessons.html#standard-deviation"><i class="fa fa-check"></i><b>3.2.6</b> Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-6-normal-distribution"><i class="fa fa-check"></i><b>3.3</b> Lesson 6 Normal Distribution</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="topics-lessons.html"><a href="topics-lessons.html#probability-distribution-function."><i class="fa fa-check"></i><b>3.3.1</b> Probability Distribution Function.</a></li>
+<li class="chapter" data-level="3.3.2" data-path="topics-lessons.html"><a href="topics-lessons.html#finding-the-probability"><i class="fa fa-check"></i><b>3.3.2</b> Finding the probability</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="topics-map-viz.html"><a href="topics-map-viz.html"><i class="fa fa-check"></i><b>4</b> Map Visualizations</a><ul>
+<li class="chapter" data-level="4.1" data-path="topics-map-viz.html"><a href="topics-map-viz.html#background"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
+<li class="chapter" data-level="4.2" data-path="topics-map-viz.html"><a href="topics-map-viz.html#how-maps-work"><i class="fa fa-check"></i><b>4.2</b> How Maps Work</a></li>
+<li class="chapter" data-level="4.3" data-path="topics-map-viz.html"><a href="topics-map-viz.html#plotting-data-over-a-map"><i class="fa fa-check"></i><b>4.3</b> Plotting Data Over a Map</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for the Bertelsmann Data Science Scholarship Program</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="topics-map-viz" class="section level1">
+<h1><span class="header-section-number">4</span> Map Visualizations</h1>
+<div id="background" class="section level2">
+<h2><span class="header-section-number">4.1</span> Background</h2>
+<p>This is a quick intro to plotting data over a map in R. For this exercise, we’ll look at an old trending topic on social media – Yanny vs. Laurel.</p>
+<p>As a quick background story: In May of 2018, a <a href="https://twitter.com/CloeCouture/status/996218489831473152?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E996218489831473152&amp;ref_url=http%3A%2F%2Ftime.com%2F5279727%2Fyanny-laurel-original-clip%2F">post</a> about a short audio clip which sounded like the word “laurel” to some listeners and “yanny” to others was widely shared (and debated) on social media. The audio clip itself sounds like a poor representation of (English language) pronunciation of both “laurel” and “yanny”, and is rather something in between the two. People sometimes distinctly heard one or the other – either “laurel” or “yanny” but not the other. When linguist Chelsea Sanker commented on the Laurel/Yanny phenomenon, she suggested that your <a href="https://www.theatlantic.com/technology/archive/2018/05/dont-rest-on-your-laurels/560483/">regional dialect</a> might have an influence on which one you percieved, and that <a href="http://conf.ling.cornell.edu/cas443/Sanker_PosterLaurelYanny2018.pdf">more demographic information</a> would be useful in considering this possibility.</p>
+<p>In this exercise, we will perform an exploratory analysis of Yanny vs. Laurel by geographic region by plotting a dataset of tweets about the topic over a map of the United States.</p>
+<p>37,064 unique tweets containing the word “yanny” or the word “laurel” (or both) were gathered via the Twitter API using the <a href="https://cran.r-project.org/web/packages/twitteR/twitteR.pdf">twitteR</a> package. These tweets included retweets, since it was assumed that retweeting also signified contributing an opinion to the debate. From these tweets, the Twitter API was used again to retrieve the location information (if any) listed in the bio of each relevent accounts. It is beyond the scope of this little tutorial to go into that part of the analysis, so we from this point forward we will just start with resulting dataset. If you’re interested in using the Twitter API, you should! There is documentation on the <a href="https://developer.twitter.com/en/docs.html">Twitter website</a> and <a href="https://medium.com/@GalarnykMichael/accessing-data-from-twitter-api-using-r-part1-b387a1c7d3e">tutorials</a> on how to do this in the R language.</p>
+<p>After gathering the data, a “winner”&quot; was calculated, by tweet, by tallying “laurel” mentions vs. “yanny” mentions and taking the highest tally. This winner formed the metric of a speaker’s choice. This approach assumed that a speaker would mention more often the form that they prefer – for example:</p>
+<ul>
+<li><p>“When I say yanny… do you hear laurel?” - Coworker. Bruhhhh what? #laurel (Laurel wins!)</p></li>
+<li><p>This may cause divorce. My husband hears it wrong. #Laurel <a href="https://t.co/FTmCsZoY8i" class="uri">https://t.co/FTmCsZoY8i</a> (Laurel!)</p></li>
+<li><p>Transervice is team Yanny… what about you Yanny or Laurel, what do you hear? <a href="https://t.co/lxG6p8g01I" class="uri">https://t.co/lxG6p8g01I</a> (Yanny wins!)</p></li>
+<li><p>I stg this is causing a war in my family. 3/5 hear #yanny while 2/5 hears #laurel I’m 100% team Yanny <a href="https://t.co/PG7twEhLbB" class="uri">https://t.co/PG7twEhLbB</a> (Yanny!)</p></li>
+<li><p>RT <span class="citation">@LoriLoughlin</span>: I hear Yanny. #yannyvslaurel #Yanny <a href="https://t.co/fUo9jDDqhp" class="uri">https://t.co/fUo9jDDqhp</a> (Yanny again!)</p></li>
+</ul>
+<p>Under this metric, some speakers were “ties” and so they won’t contribute to the analysis – for example, this one:</p>
+<ul>
+<li>Brands tryna capitalize on #Yanny and #Laurel <a href="https://t.co/gz74Mwb6SX" class="uri">https://t.co/gz74Mwb6SX</a> (Nobody wins)</li>
+</ul>
+<p>If a user tweeted multiple times on the subject, only their first tweet with a “win” was counted.</p>
+<p>The user location data gathered via the Twitter API was then transformed from its raw form to a a U.S. state location. For example, if a user’s bio location contained either “California” or “CA”,their full state name was coded as “California.” This means non-U.S. regions and ambiguous regions or misspellings were skipped over, and users who chose not to provide a location were also skipped. This brought the sample size down to 6,499 tweets with U.S. state locations.</p>
+<p>The result was then merged with a set of of states, census regions, and larger regions compiled from information provided by <a href="https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf">U.S. Census</a>.</p>
+<p>Plotting by state or census region acts as a rough proxy for dialect. Dialects may not align perfectly with state or region boundaries – e.g. a state or a city could contain many dialects. But since all we have to go on is Twitter bios, we won’t get perfect alignment with dialectal boundaries. This is a rough approximation that can be nice for an exploratory analysis.</p>
+<p>That’s all the background info, so let’s load the data and get into the map-making!</p>
+<p><code>dataset</code> contains the Twitter data with the Cenusus information included, and <code>state</code> contains the Census information by itself.</p>
+<pre class="sourceCode r"><code class="sourceCode r">dataset &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/anonymizedDedupedDataset.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+states &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/states.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre>
+</div>
+<div id="how-maps-work" class="section level2">
+<h2><span class="header-section-number">4.2</span> How Maps Work</h2>
+<p>When you plot a map using R, you generally need two things: a shape to map over (representing the geographic areas and boundaries) and a dataset including location.</p>
+<p>Currently, our Twitter dataset has the following variables:</p>
+<pre><code>#&gt;  [1] &quot;text&quot;          &quot;favorited&quot;     &quot;favoriteCount&quot; &quot;replyToSN&quot;    
+#&gt;  [5] &quot;created&quot;       &quot;truncated&quot;     &quot;replyToSID&quot;    &quot;id&quot;           
+#&gt;  [9] &quot;replyToUID&quot;    &quot;statusSource&quot;  &quot;screenName&quot;    &quot;retweetCount&quot; 
+#&gt; [13] &quot;isRetweet&quot;     &quot;retweeted&quot;     &quot;longitude&quot;     &quot;latitude&quot;     
+#&gt; [17] &quot;location&quot;      &quot;State&quot;         &quot;Abbreviation&quot;  &quot;CensusRegion&quot; 
+#&gt; [21] &quot;LargerRegion&quot;  &quot;laurelCount&quot;   &quot;yannyCount&quot;    &quot;choice&quot;</code></pre>
+<p>and the state, state abbreviation, cencuses, and larger region variables look like this:</p>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+State
+</th>
+<th style="text-align:left;">
+Abbreviation
+</th>
+<th style="text-align:left;">
+CensusRegion
+</th>
+<th style="text-align:left;">
+LargerRegion
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+washington
+</td>
+<td style="text-align:left;">
+WA
+</td>
+<td style="text-align:left;">
+Pacific
+</td>
+<td style="text-align:left;">
+West
+</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Plotting a map geom requires the ggplot2 package, and the map we would like to plot over can be found in the <a href="https://cran.r-project.org/web/packages/fiftystater/index.html">fiftystater</a> package. That makes our task a little easier, because <code>fiftystater</code> already contains the lognitude and latitude coordinates for plotting a map. All that remains is to match the Twitter dataset back to <code>fiftystater</code> by means of the identifying variable, U.S. state name.</p>
+<p>As an example, let’s plot a map right now just using <code>fiftystater</code>. It won’t have the Twitter data in it yet, but that’s alright. Once the <code>fiftystater</code> package is loaded, you can look at the data frame <code>fifty_states</code> to see what you’re working with. <code>fiftystater</code>’s <code>fiftystates</code> data:</p>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+long
+</th>
+<th style="text-align:right;">
+lat
+</th>
+<th style="text-align:right;">
+order
+</th>
+<th style="text-align:left;">
+hole
+</th>
+<th style="text-align:left;">
+piece
+</th>
+<th style="text-align:left;">
+id
+</th>
+<th style="text-align:left;">
+group
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+-85.07007
+</td>
+<td style="text-align:right;">
+31.98070
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-85.11515
+</td>
+<td style="text-align:right;">
+31.90742
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-85.13557
+</td>
+<td style="text-align:right;">
+31.85488
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-85.13156
+</td>
+<td style="text-align:right;">
+31.78381
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-85.13017
+</td>
+<td style="text-align:right;">
+31.77885
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+-85.11529
+</td>
+<td style="text-align:right;">
+31.73157
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+FALSE
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+Alabama.1
+</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+If we want to plot that map, all we have to do is call ggplot with geom_map on the dataset. You might notice that we also include expand_limits and coord_map. That’s just to make sure that the plot includes the whole picture, and that the gridlines are appropriate for a map.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(fifty_states, <span class="kw">aes</span>(<span class="dt">map_id=</span>id)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>()</code></pre>
+<p><img src="map_visualizations_files/figure-html/justAMap-1.png" width="672" /></p>
+<p>Hmmm. We probably don’t want those axis labels, so let’s remove them. While we’re at it, let’s also remove the gridlines by changing the theme.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(fifty_states, <span class="kw">aes</span>(<span class="dt">map_id=</span>id)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>() <span class="op">+</span>
+<span class="st">        </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">       </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">theme</span>(<span class="dt">panel.background =</span> <span class="kw">element_blank</span>())</code></pre>
+<p><img src="map_visualizations_files/figure-html/justAMapPretty-1.png" width="672" /></p>
+<p>Congratulations! You’ve made a map!</p>
+</div>
+<div id="plotting-data-over-a-map" class="section level2">
+<h2><span class="header-section-number">4.3</span> Plotting Data Over a Map</h2>
+<p>Now we just need to plot the Laurel and Yanny data over the map. Each row of data (each tweet) already has a code for whether “Yanny” or “Laurel” won. To find out how this trended over regions, we can just plot within-region ratios of Laurel:Yanny wins. A ratio above 1 indicates a region trended toward Laurel, and a ratio below 1 indicates a region trended toward Yanny.</p>
+<p>First, let’s plot all U.S. larger regions. Multiple census regions make up a single larger region, so these regions span large parts of the U.S. map.</p>
+<p>We need to reformat our Twitter dataset into a summary dataset where each row represents not a single tweet, but rather a single state. Each row of that dataset (with each row representing a state) should have the ratio of Laurel to Yanny wins for that state’s datapoint. Let’s start with the largest region size, in the <code>LargerRegion</code> column.</p>
+<p>We’ll take the ratio of Laurel to Yanny choices by region, and then we’ll merge that back with the state variable. The <code>fiftystater</code> package plots by states, so we still need the data by state.</p>
+<pre class="sourceCode r"><code class="sourceCode r">choiceByReg &lt;-<span class="st"> </span><span class="kw">as.data.frame.matrix</span>(<span class="kw">table</span>(dataset<span class="op">$</span>LargerRegion, dataset<span class="op">$</span>choice))
+choiceByReg<span class="op">$</span>neither &lt;-<span class="st"> </span><span class="ot">NULL</span>
+choiceByReg<span class="op">$</span>ratio &lt;-<span class="st"> </span>choiceByReg<span class="op">$</span>laurel <span class="op">/</span><span class="st"> </span>choiceByReg<span class="op">$</span>yanny
+choiceByReg<span class="op">$</span>LargerRegion &lt;-<span class="st"> </span><span class="kw">row.names</span>(choiceByReg)
+choiceByReg &lt;-<span class="st"> </span><span class="kw">right_join</span>(choiceByReg, states, <span class="dt">by=</span><span class="st">&quot;LargerRegion&quot;</span>)
+choiceByReg &lt;-<span class="st"> </span>choiceByReg[<span class="op">!</span><span class="kw">is.na</span>(choiceByReg<span class="op">$</span>ratio) <span class="op">&amp;</span><span class="st"> </span>choiceByReg<span class="op">$</span>ratio <span class="op">!=</span><span class="st"> </span><span class="ot">Inf</span> <span class="op">&amp;</span><span class="st"> </span>choiceByReg<span class="op">$</span>LargerRegion <span class="op">!=</span><span class="st">&quot;&quot;</span>, ]</code></pre>
+<p>That resulting dataset looks like this, with <code>LargerRegion</code> values duplicated in each state contained in that region (note rows 9 and 10, for example):</p>
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+laurel
+</th>
+<th style="text-align:right;">
+yanny
+</th>
+<th style="text-align:right;">
+ratio
+</th>
+<th style="text-align:left;">
+LargerRegion
+</th>
+<th style="text-align:left;">
+State
+</th>
+<th style="text-align:left;">
+Abbreviation
+</th>
+<th style="text-align:left;">
+CensusRegion
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+1.587413
+</td>
+<td style="text-align:left;">
+South
+</td>
+<td style="text-align:left;">
+alabama
+</td>
+<td style="text-align:left;">
+AL
+</td>
+<td style="text-align:left;">
+East South Central
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+3.000000
+</td>
+<td style="text-align:left;">
+Alaska
+</td>
+<td style="text-align:left;">
+alaska
+</td>
+<td style="text-align:left;">
+AK
+</td>
+<td style="text-align:left;">
+Alaska
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+1.727778
+</td>
+<td style="text-align:left;">
+West
+</td>
+<td style="text-align:left;">
+arizona
+</td>
+<td style="text-align:left;">
+AZ
+</td>
+<td style="text-align:left;">
+Mountain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+1.587413
+</td>
+<td style="text-align:left;">
+South
+</td>
+<td style="text-align:left;">
+arkansas
+</td>
+<td style="text-align:left;">
+AR
+</td>
+<td style="text-align:left;">
+West South Central
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+1.727778
+</td>
+<td style="text-align:left;">
+West
+</td>
+<td style="text-align:left;">
+california
+</td>
+<td style="text-align:left;">
+CA
+</td>
+<td style="text-align:left;">
+Pacific
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+1.727778
+</td>
+<td style="text-align:left;">
+West
+</td>
+<td style="text-align:left;">
+colorado
+</td>
+<td style="text-align:left;">
+CO
+</td>
+<td style="text-align:left;">
+Mountain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+1.744186
+</td>
+<td style="text-align:left;">
+Northeast
+</td>
+<td style="text-align:left;">
+connecticut
+</td>
+<td style="text-align:left;">
+CT
+</td>
+<td style="text-align:left;">
+New England
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:right;">
+225
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+1.744186
+</td>
+<td style="text-align:left;">
+Northeast
+</td>
+<td style="text-align:left;">
+delaware
+</td>
+<td style="text-align:left;">
+DE
+</td>
+<td style="text-align:left;">
+New England
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+1.587413
+</td>
+<td style="text-align:left;">
+South
+</td>
+<td style="text-align:left;">
+florida
+</td>
+<td style="text-align:left;">
+FL
+</td>
+<td style="text-align:left;">
+South Atlantic
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:right;">
+454
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+1.587413
+</td>
+<td style="text-align:left;">
+South
+</td>
+<td style="text-align:left;">
+georgia
+</td>
+<td style="text-align:left;">
+GA
+</td>
+<td style="text-align:left;">
+South Atlantic
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:right;">
+311
+</td>
+<td style="text-align:right;">
+180
+</td>
+<td style="text-align:right;">
+1.727778
+</td>
+<td style="text-align:left;">
+West
+</td>
+<td style="text-align:left;">
+idaho
+</td>
+<td style="text-align:left;">
+ID
+</td>
+<td style="text-align:left;">
+Mountain
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+2.152000
+</td>
+<td style="text-align:left;">
+Midwest
+</td>
+<td style="text-align:left;">
+illinois
+</td>
+<td style="text-align:left;">
+IL
+</td>
+<td style="text-align:left;">
+East North Central
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+2.152000
+</td>
+<td style="text-align:left;">
+Midwest
+</td>
+<td style="text-align:left;">
+indiana
+</td>
+<td style="text-align:left;">
+IN
+</td>
+<td style="text-align:left;">
+East North Central
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+2.152000
+</td>
+<td style="text-align:left;">
+Midwest
+</td>
+<td style="text-align:left;">
+iowa
+</td>
+<td style="text-align:left;">
+IA
+</td>
+<td style="text-align:left;">
+West North Central
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:right;">
+269
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+2.152000
+</td>
+<td style="text-align:left;">
+Midwest
+</td>
+<td style="text-align:left;">
+kansas
+</td>
+<td style="text-align:left;">
+KS
+</td>
+<td style="text-align:left;">
+West North Central
+</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Now let’s plot by region. We use a similar call to ggplot that we did above for our simple map, but it uses that Laurel-Yanny state dataset, and we need to add an aesthetic to geom_map to fill by ratio (creating a heat map by ratio). The resulting color fill will have darker colors for a stronger Yanny trend and lighter colors for a strong Laurel trend.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(choiceByReg, <span class="kw">aes</span>(<span class="dt">map_id =</span> State)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ratio), <span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>() <span class="op">+</span>
+<span class="st">               </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">       </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, 
+             <span class="dt">panel.background =</span> <span class="kw">element_blank</span>())</code></pre>
+<p><img src="map_visualizations_files/figure-html/plotByLargerRegion-1.png" width="672" /></p>
+<p>Ack! Why can’t we see any differentiation? Well, our table contains Guam and Puerto Rico, but <code>fiftystater</code> doesn’t inclde them so they don’t appear on the map. That’s too bad. Guam and Puerto Rico trend very Laurel, so that changes how the color scale shows up on the rest of the United States.</p>
+<p>Figuring out how to plot Guam and Puerto Rico on this map provides a good advanced exercise, but for now let’s see what the map looks like without these datapoints.</p>
+<pre class="sourceCode r"><code class="sourceCode r">choiceByReg &lt;-<span class="st"> </span>choiceByReg[<span class="op">!</span><span class="st"> </span>choiceByReg<span class="op">$</span>State <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;gaum&quot;</span>, <span class="st">&quot;puerto rico&quot;</span>), ]
+
+<span class="kw">ggplot</span>(choiceByReg, <span class="kw">aes</span>(<span class="dt">map_id =</span> State)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ratio), <span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">       </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, 
+             <span class="dt">panel.background =</span> <span class="kw">element_blank</span>())</code></pre>
+<p><img src="map_visualizations_files/figure-html/plotByLargerRegionSubset-1.png" width="672" /></p>
+<p>It looks like, overall, there were no regions that overwhelmingly preferred Yanny. However, there were some regions with a very high Laurel preference, like the midwest, and some with a more moderate Laurel preference, like the west coast. Alaska seems very pro-Laurel.</p>
+<p>Just for fun, let’s play with the appearance of this map. We can add add our own colors with scale_fill_gradient().</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(choiceByReg, <span class="kw">aes</span>(<span class="dt">map_id =</span> State)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ratio), <span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>() <span class="op">+</span>
+<span class="st">       </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">       </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, 
+             <span class="dt">panel.background =</span> <span class="kw">element_blank</span>()) <span class="op">+</span>
+<span class="st">       </span><span class="kw">scale_fill_gradient</span>(<span class="dt">low =</span><span class="st">&quot;thistle4&quot;</span>, <span class="dt">high =</span> <span class="st">&quot;thistle&quot;</span>)</code></pre>
+<p><img src="map_visualizations_files/figure-html/plotByLargerRegionPretty-1.png" width="672" /></p>
+<p>That looks great. It at least seems like these regions differ in terms of their Laurel vs. Yanny preference.</p>
+<p>Do you feel suspicious, though? This map might look a little <em>too</em> clean, if you know what I mean. What if, inside those regions, a few states drive the whole trend? What if there’s disagreement within regions? Let’s dig deeper.</p>
+<p>Repeating the same steps as before but using <code>State</code> instead of <code>LargerRegion</code> as the tabling variable will yield the Laurel-Yanny ratio at a state level. Cutting the data off (somewhat arbitrarily) at n = 25 tweets will avoid including states with only a few tweets, which could potentially represent a bad sample.</p>
+<pre class="sourceCode r"><code class="sourceCode r">choiceByState &lt;-<span class="st"> </span><span class="kw">as.data.frame.matrix</span>(<span class="kw">table</span>(dataset<span class="op">$</span>State, dataset<span class="op">$</span>choice)) ## Using State
+choiceByState<span class="op">$</span>neither &lt;-<span class="st"> </span><span class="ot">NULL</span>
+choiceByState &lt;-<span class="st"> </span>choiceByState[<span class="kw">rowSums</span>(choiceByState) <span class="op">&gt;=</span><span class="st"> </span><span class="dv">25</span>, ]
+choiceByState<span class="op">$</span>ratio &lt;-<span class="st"> </span>choiceByState<span class="op">$</span>laurel <span class="op">/</span><span class="st"> </span>choiceByState<span class="op">$</span>yanny
+choiceByState<span class="op">$</span>State &lt;-<span class="st"> </span><span class="kw">row.names</span>(choiceByState)
+choiceByState &lt;-<span class="st"> </span>choiceByState[<span class="op">!</span><span class="kw">is.na</span>(choiceByState<span class="op">$</span>ratio) <span class="op">&amp;</span><span class="st"> </span>choiceByState<span class="op">$</span>ratio <span class="op">!=</span><span class="st"> </span><span class="ot">Inf</span> <span class="op">&amp;</span><span class="st"> </span>choiceByState<span class="op">$</span>State <span class="op">!=</span><span class="st">&quot;&quot;</span>, ]
+choiceByState &lt;-<span class="st"> </span>choiceByState[<span class="op">!</span><span class="st"> </span>choiceByState<span class="op">$</span>State <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Guam&quot;</span>, <span class="st">&quot;Puerto Rico&quot;</span>), ]</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(choiceByState, <span class="kw">aes</span>(<span class="dt">map_id =</span> State)) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">geom_map</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>ratio), <span class="dt">map =</span> fifty_states) <span class="op">+</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">expand_limits</span>(<span class="dt">x =</span> fifty_states<span class="op">$</span>long, <span class="dt">y =</span> fifty_states<span class="op">$</span>lat) <span class="op">+</span>
+<span class="st">        </span><span class="kw">coord_map</span>() <span class="op">+</span>
+<span class="st">       </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">       </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;&quot;</span>) <span class="op">+</span>
+<span class="st">       </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;bottom&quot;</span>, 
+             <span class="dt">panel.background =</span> <span class="kw">element_blank</span>())</code></pre>
+<p><img src="map_visualizations_files/figure-html/plotByState-1.png" width="672" /></p>
+<p>Oof. That forms a more complicated picture. Unstructured social media data can get messy! Many states show up as blank holes, because the dataset has insufficient data for those states. Plotting larger regions suggested that the south trended Yanny (dark blue), the midwest trended Laurel (light blue), and the west trended somewhere in the middle. Does this map support that? Missing data makes it hard to tell, but one spot that pops out is the Kentucky-Tenessee-North Carolina region. In the <code>LargerRegion</code> map, these areas formed a fairly Yanny area with the rest of the southeast. Here, they pop out on their and suggest a more strongly Laurel trend. What else can you spot?</p>
+<p>In this tutorial, we went through simple map plotting and explored the Laurel-Yanny debate as a case study. We plotted the data by larger U.S. region and by U.S. state. We never plotted by the medium-sized census regions, so that makes a good exercise for additional practice if that’s what you’re looking for. Keep at it and happy plotting!</p>
+<p>Please feel free to email me at first name last name @ gmail.com with any errata or questions.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="topics-lessons.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

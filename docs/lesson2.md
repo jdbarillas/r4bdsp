@@ -1,3 +1,4 @@
+
 # Udacity Even Lessons {#topics-lessons}
 
 ## Lesson 2 Visualization
@@ -35,7 +36,7 @@ print(paste0("The most frequent petal count is: ", MostFreq))
 ```
 
 ```
-## [1] "The most frequent petal count is: 15"
+#> [1] "The most frequent petal count is: 15"
 ```
 
 
@@ -47,7 +48,7 @@ print(paste0("The frequency of flowers with 15 petals is: ", PetalFreq))
 ```
 
 ```
-## [1] "The frequency of flowers with 15 petals is: 9"
+#> [1] "The frequency of flowers with 15 petals is: 9"
 ```
 
 
@@ -64,7 +65,7 @@ print(paste0("The proportion of flowers with 15 petals is: ", PetalProp))
 ```
 
 ```
-## [1] "The proportion of flowers with 15 petals is: 0.3"
+#> [1] "The proportion of flowers with 15 petals is: 0.3"
 ```
 
 
@@ -80,7 +81,7 @@ print(paste0("The percentage of flowers with 15 petals is: ", PetalPerc, "%"))
 ```
 
 ```
-## [1] "The percentage of flowers with 15 petals is: 30%"
+#> [1] "The percentage of flowers with 15 petals is: 30%"
 ```
 
 
@@ -93,7 +94,7 @@ A histogram is a graphical representation of the distribution of data, discrete 
 hist(Petals, breaks = (length(Petals)/2), col = "blue")
 ```
 
-<img src="lesson2_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="lesson2_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 
 ```r
@@ -103,7 +104,7 @@ bins <- c(10,15,20,25,30)
 hist(Petals, breaks = bins, col = "orange")
 ```
 
-<img src="lesson2_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="lesson2_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
 
 ### Skew

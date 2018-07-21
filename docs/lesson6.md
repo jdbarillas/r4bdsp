@@ -1,4 +1,5 @@
 
+
 ## Lesson 6 Normal Distribution
 
 In this exercise we will find the probability of a given observation within a normal distribution. All definitions and data come from the original Udacity lesson and can be found [here.](https://storage.googleapis.com/supplemental_media/udacityu/1478678538/Lesson6.pdf "Lesson6.pdf")
@@ -30,7 +31,7 @@ lines(x, hx)
 polygon(c(lb,x,ub), c(0,hx,0), col="blue") 
 ```
 
-<img src="lesson6_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="lesson6_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 ### Finding the probability
 If given an observation, you can find the probability and show the area below, above, and between particular observations. To do this you must first calculated the z-score
@@ -50,7 +51,7 @@ print(paste0("The Z-Score for a student with the Height of 2.05 meters is: ", ob
 ```
 
 ```
-## [1] "The Z-Score for a student with the Height of 2.05 meters is: 1.33"
+#> [1] "The Z-Score for a student with the Height of 2.05 meters is: 1.33"
 ```
 
 #### Proportion using a z-table
@@ -69,7 +70,7 @@ print(paste0("The proportion of students shorter than 2.05 meters is: ", obs1_sp
 ```
 
 ```
-## [1] "The proportion of students shorter than 2.05 meters is: 0.9088"
+#> [1] "The proportion of students shorter than 2.05 meters is: 0.9088"
 ```
 
 #### Plotting the percentage
@@ -96,7 +97,7 @@ text(1.8,.3, labels = shorter_obs1, col = "white")
 text(2.1,.3, labels = taller_obs1, col = "blue")
 ```
 
-<img src="lesson6_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="lesson6_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 #### Proportion of a range
 You can find the proportion of students that fall between a given range by subtraction the proportion of the first observation from the proportion of the second observation.
@@ -125,4 +126,4 @@ between_obs <- round((obs1_spor - obs2_spor) * 100, 2)
 text(1.95,.3, labels = between_obs, col = "white")
 ```
 
-<img src="lesson6_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="lesson6_files/figure-html/unnamed-chunk-8-1.png" width="672" />

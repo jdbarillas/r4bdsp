@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>R for the Bertelsmann Data Science Scholarship Program</title>
   <meta name="description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R.">
-  <meta name="generator" content="bookdown 0.7.15 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="R for the Bertelsmann Data Science Scholarship Program" />
   <meta property="og:type" content="book" />
@@ -46,6 +46,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -132,8 +133,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Specific Topics</b></span></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#contributors"><i class="fa fa-check"></i><b>2.1</b> Contributors</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#jolynn---udacity-even-lessons"><i class="fa fa-check"></i><b>2.1.1</b> Jolynn - <span>Udacity Even Lessons</span></a></li>
-<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#how-to-contribute"><i class="fa fa-check"></i><b>2.1.2</b> How to contribute</a></li>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#afton---map-visualizations"><i class="fa fa-check"></i><b>2.1.1</b> Afton - <span>Map Visualizations</span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#jolynn---udacity-even-lessons"><i class="fa fa-check"></i><b>2.1.2</b> Jolynn - <span>Udacity Even Lessons</span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#how-to-contribute"><i class="fa fa-check"></i><b>2.1.3</b> How to contribute</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="topics-lessons.html"><a href="topics-lessons.html"><i class="fa fa-check"></i><b>3</b> Udacity Even Lessons</a><ul>
@@ -158,6 +160,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="topics-lessons.html"><a href="topics-lessons.html#finding-the-probability"><i class="fa fa-check"></i><b>3.3.2</b> Finding the probability</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="topics-map-viz.html"><a href="topics-map-viz.html"><i class="fa fa-check"></i><b>4</b> Map Visualizations</a><ul>
+<li class="chapter" data-level="4.1" data-path="topics-map-viz.html"><a href="topics-map-viz.html#background"><i class="fa fa-check"></i><b>4.1</b> Background</a></li>
+<li class="chapter" data-level="4.2" data-path="topics-map-viz.html"><a href="topics-map-viz.html#how-maps-work"><i class="fa fa-check"></i><b>4.2</b> How Maps Work</a></li>
+<li class="chapter" data-level="4.3" data-path="topics-map-viz.html"><a href="topics-map-viz.html#plotting-data-over-a-map"><i class="fa fa-check"></i><b>4.3</b> Plotting Data Over a Map</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -180,14 +187,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This part of the book provides tutorials on specific topics using R. These tutorials are written and curated by scholarship participants.</p>
 <div id="contributors" class="section level2">
 <h2><span class="header-section-number">2.1</span> Contributors</h2>
-<div id="jolynn---udacity-even-lessons" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Jolynn - <a href="topics-lessons.html#topics-lessons">Udacity Even Lessons</a></h3>
+<div id="afton---map-visualizations" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Afton - <a href="topics-map-viz.html#topics-map-viz">Map Visualizations</a></h3>
 <blockquote>
-<p>My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my <a href="https://jolynns1.wixsite.com/mgis">website</a> or find me on <a href="https://www.linkedin.com/in/jolynnschmidt/">LinkedIn</a></p>
+<p>My name is Afton and I work as a statistical programmer for Murphy Research, a market research company based in Los Angeles. My background is originally in linguistics, and I graduated with an MA in linguistics from the University of Southern California. Connect with me on <a href="https://twitter.com/aftonsteps">Twitter</a> or <a href="https://www.linkedin.com/in/aftoncoombs">LinkedIn</a> so we can talk more about data and language!</p>
+</blockquote>
+</div>
+<div id="jolynn---udacity-even-lessons" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Jolynn - <a href="topics-lessons.html#topics-lessons">Udacity Even Lessons</a></h3>
+<blockquote>
+<p>My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my <a href="https://jolynns1.wixsite.com/mgis">website</a> or find me on <a href="https://www.linkedin.com/in/jolynnschmidt/">LinkedIn</a>.</p>
 </blockquote>
 </div>
 <div id="how-to-contribute" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> How to contribute</h3>
+<h3><span class="header-section-number">2.1.3</span> How to contribute</h3>
 <p>We are using a shared repository model. Therefore, you can contribute to the book by following these steps:</p>
 <ol style="list-style-type: decimal">
 <li>Clone <a href="https://github.com/jdbarillas/r4bdsp">the book repo</a> from GitHub.</li>
@@ -247,19 +260,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

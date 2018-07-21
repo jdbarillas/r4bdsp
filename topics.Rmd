@@ -6,9 +6,13 @@ This part of the book provides tutorials on specific topics using R. These tutor
 
 ## Contributors
 
+### Afton - [Map Visualizations](#topics-map-viz)
+
+>My name is Afton and I work as a statistical programmer for Murphy Research, a market research company  based in Los Angeles. My background is originally in linguistics, and I graduated with an MA in linguistics from the University of Southern California. Connect with me on [Twitter](https://twitter.com/aftonsteps) or [LinkedIn](https://www.linkedin.com/in/aftoncoombs) so we can talk more about data and language!
+
 ### Jolynn - [Udacity Even Lessons](#topics-lessons)
 
->My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/)
+>My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/).
 
 ### How to contribute
 

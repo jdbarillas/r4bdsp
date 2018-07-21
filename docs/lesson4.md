@@ -1,4 +1,5 @@
 
+
 ## Lesson 4 Variability
 
 In this exercise we will start by looking at the variability of our dataset. All definitions and data come from the original Udacity lesson and can be found [here.](https://storage.googleapis.com/supplemental_media/udacityu/1471748603/Lesson4.pdf "Lesson4.pdf")
@@ -16,8 +17,8 @@ summary(income)
 ```
 
 ```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    2500    2688    2820    2868    3025    3400
+#>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#>    2500    2688    2820    2868    3025    3400
 ```
 
 ```r
@@ -46,7 +47,7 @@ text(x = .75,y = Income_lowQ, labels = "Q1")
 text(x = .75,y = Income_highQ, labels = "Q3")
 ```
 
-<img src="lesson4_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="lesson4_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ### Outliers
 You can use the IQR to identify outliers:
@@ -65,9 +66,9 @@ cat(paste0("The Income IQR = $",IQR,"\n",
 ```
 
 ```
-## The Income IQR = $337.5
-## Upper Outliers are above: $3531.25
-## Lower Outliers are below: $2181.25
+#> The Income IQR = $337.5
+#> Upper Outliers are above: $3531.25
+#> Lower Outliers are below: $2181.25
 ```
 
 ### Variance
@@ -94,7 +95,7 @@ print(paste0("The variance caluclated by hand: ", Var_income))
 ```
 
 ```
-## [1] "The variance caluclated by hand: 81033.9015151515"
+#> [1] "The variance caluclated by hand: 81033.9015151515"
 ```
 
 ```r
@@ -103,7 +104,7 @@ print(paste0("The variance using the R built in function: ",var(income)))
 ```
 
 ```
-## [1] "The variance using the R built in function: 81033.9015151515"
+#> [1] "The variance using the R built in function: 81033.9015151515"
 ```
 
 ### Standard Deviation
@@ -117,7 +118,7 @@ print(paste0("The standard deviation caluclated by hand: ", std_income))
 ```
 
 ```
-## [1] "The standard deviation caluclated by hand: 284.66"
+#> [1] "The standard deviation caluclated by hand: 284.66"
 ```
 
 ```r
@@ -126,7 +127,7 @@ print(paste0("The standard deviation using the R built in function: ",round(sd(i
 ```
 
 ```
-## [1] "The standard deviation using the R built in function: 284.66"
+#> [1] "The standard deviation using the R built in function: 284.66"
 ```
 
 ```r
@@ -153,4 +154,4 @@ text(neg_1_std - 40,.0015, expression(mu - sigma))
 text(pos_2_std - 40,.0015, expression(mu + 2*sigma))
 ```
 
-<img src="lesson4_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="lesson4_files/figure-html/unnamed-chunk-7-1.png" width="672" />

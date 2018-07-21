@@ -10,5 +10,9 @@ rmd_files: [
   "topics.Rmd",
     "lesson2.rmd",
     "lesson4.rmd",
-    "lesson6.rmd"
+    "lesson6.rmd",
+    
+    "map_visualizations.Rmd"
   ]
+  
+before_chapter_script: "_before.R"

@@ -1,3 +1,4 @@
+
 ---
 knit: "bookdown::render_book"
 title: "R for the Bertelsmann Data Science Scholarship Program"
