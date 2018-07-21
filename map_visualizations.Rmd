@@ -214,4 +214,4 @@ Oof. That forms a more complicated picture. Unstructured social media data can g
 
 In this tutorial, we went through simple map plotting and explored the Laurel-Yanny debate as a case study. We plotted the data by larger U.S. region and by U.S. state. We never plotted by the medium-sized census regions, so that makes a good exercise for additional practice if that's what you're looking for. Keep at it and happy plotting!
 
-Please feel free to email me at first name last name @ gmail.com with any errata or questions.
+Please feel free to email me at aftoncoombsgmail.com with any errata or questions.
