@@ -8,7 +8,7 @@ This part of the book provides tutorials on specific topics using R. These tutor
 
 ### Jolynn - [Udacity Even Lessons](#topics-lessons)
 
-My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/)
+>My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/)
 
 ### How to contribute
 
