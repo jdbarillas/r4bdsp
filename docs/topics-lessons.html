@@ -256,211 +256,53 @@ bins &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10
 </div>
 <div id="lesson-4-variability" class="section level2">
 <h2><span class="header-section-number">3.2</span> Lesson 4 Variability</h2>
-<p>In this exercise we will start by looking at the variability of our dataset. All definitions and data come from the original Udacity lesson and can be found <a href="https://storage.googleapis.com/supplemental_media/udacityu/1471748603/Lesson4.pdf" title="Lesson4.pdf">here.</a></p>
 <div id="data-1" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Data</h3>
-<p>We start by assigning data to income and looking at the summary statistics. I am also going to grab all of the stats to use for labels.</p>
-<pre class="sourceCode r"><code class="sourceCode r">income &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2500</span>, <span class="dv">3000</span>, <span class="dv">2900</span>
-            ,<span class="dv">2650</span>, <span class="dv">3225</span>, <span class="dv">2700</span>
-            ,<span class="dv">2740</span>, <span class="dv">3000</span>, <span class="dv">3400</span>
-            ,<span class="dv">2500</span>, <span class="dv">3100</span>, <span class="dv">2700</span>)
-
-<span class="kw">summary</span>(income)</code></pre>
-<pre><code>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#&gt;    2500    2688    2820    2868    3025    3400</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#names(income_stats)</span>
-Income_min &lt;-<span class="st"> </span><span class="kw">min</span>(income)
-Income_max &lt;-<span class="st"> </span><span class="kw">max</span>(income)
-Income_med &lt;-<span class="st"> </span><span class="kw">median</span>(income)
-Income_lowQ &lt;-<span class="st"> </span><span class="kw">unname</span>(<span class="kw">quantile</span>(income, <span class="kw">c</span>(<span class="fl">0.25</span>)))
-Income_highQ &lt;-<span class="st"> </span><span class="kw">unname</span>(<span class="kw">quantile</span>(income, <span class="kw">c</span>(<span class="fl">0.75</span>)))</code></pre>
 </div>
 <div id="interquartile-range" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Interquartile range</h3>
-<p>The Interquartile range (IQR) is the distance between the 1st quartile and 3rd quartile and gives us the range of the middle 50% of our data.
-The IQR is easily found by computing: Q3 - Q1</p>
 </div>
 <div id="box-plot" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Box Plot</h3>
-<p>A good way to view this is using a box plot. The IQR will be displayed within the box between Q1 and Q3.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(income, <span class="dt">col =</span> <span class="st">&quot;lightblue&quot;</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">.75</span>,<span class="dt">y =</span> Income_min, <span class="dt">labels =</span> <span class="st">&quot;min&quot;</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">.75</span>,<span class="dt">y =</span> Income_max, <span class="dt">labels =</span> <span class="st">&quot;max&quot;</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">.75</span>,<span class="dt">y =</span> Income_med, <span class="dt">labels =</span> <span class="st">&quot;median&quot;</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">.75</span>,<span class="dt">y =</span> Income_lowQ, <span class="dt">labels =</span> <span class="st">&quot;Q1&quot;</span>)
-<span class="kw">text</span>(<span class="dt">x =</span> <span class="fl">.75</span>,<span class="dt">y =</span> Income_highQ, <span class="dt">labels =</span> <span class="st">&quot;Q3&quot;</span>)</code></pre>
-<p><img src="lesson4_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="outliers" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Outliers</h3>
-<p>You can use the IQR to identify outliers:</p>
-<ol style="list-style-type: decimal">
-<li><p>Upper outliers: Q3 + (1.5 * IQR)</p></li>
-<li><p>Lower outliers: Q1 - (1.5 * IQR)</p></li>
-</ol>
-<pre class="sourceCode r"><code class="sourceCode r">IQR &lt;-<span class="st"> </span>Income_highQ <span class="op">-</span><span class="st"> </span>Income_lowQ
-upper_outlier &lt;-<span class="st"> </span>Income_highQ <span class="op">+</span><span class="st"> </span>(<span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span>IQR)
-lower_outlier &lt;-<span class="st"> </span>Income_lowQ <span class="op">-</span><span class="st"> </span>(<span class="fl">1.5</span> <span class="op">*</span><span class="st"> </span>IQR)
-<span class="kw">cat</span>(<span class="kw">paste0</span>(<span class="st">&quot;The Income IQR = $&quot;</span>,IQR,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,
-              <span class="st">&quot;Upper Outliers are above: $&quot;</span>, upper_outlier,<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,
-              <span class="st">&quot;Lower Outliers are below: $&quot;</span>,lower_outlier))</code></pre>
-<pre><code>#&gt; The Income IQR = $337.5
-#&gt; Upper Outliers are above: $3531.25
-#&gt; Lower Outliers are below: $2181.25</code></pre>
 </div>
 <div id="variance" class="section level3">
 <h3><span class="header-section-number">3.2.5</span> Variance</h3>
-<p>The variance is the average of the squared differences from the mean. The formula for computing variance is:
-<span class="math display">\[\sigma^{2} = \frac{\sum_{i=1}^{n} 
-  \left(x_{i} - \bar{x}\right)^{2}}
-  {n-1}\]</span></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># first let&#39;s calculate it from scratch</span>
-<span class="co"># get the mean of income</span>
-s_mean &lt;-<span class="st"> </span><span class="kw">mean</span>(income)
-<span class="co"># get the difference between each income and the mean</span>
-r_diff &lt;-<span class="st"> </span><span class="cf">function</span>(x){x <span class="op">-</span><span class="st"> </span>s_mean}
-diff_of_mean &lt;-<span class="st"> </span><span class="kw">r_diff</span>(income)
-<span class="co"># get the sqr_root of each data point</span>
-sqr_of_diff &lt;-<span class="st"> </span>diff_of_mean<span class="op">^</span><span class="dv">2</span>
-<span class="co">#sum the squares</span>
-sum_sqrs &lt;-<span class="st"> </span><span class="kw">sum</span>(sqr_of_diff)
-<span class="co"># Divide by the number of samples - 1</span>
-Var_income &lt;-<span class="st"> </span>sum_sqrs <span class="op">/</span><span class="st"> </span>(<span class="kw">length</span>(income) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The variance caluclated by hand: &quot;</span>, Var_income))</code></pre>
-<pre><code>#&gt; [1] &quot;The variance caluclated by hand: 81033.9015151515&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># we can also use the built in function in R</span>
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The variance using the R built in function: &quot;</span>,<span class="kw">var</span>(income)))</code></pre>
-<pre><code>#&gt; [1] &quot;The variance using the R built in function: 81033.9015151515&quot;</code></pre>
 </div>
 <div id="standard-deviation" class="section level3">
 <h3><span class="header-section-number">3.2.6</span> Standard Deviation</h3>
-<p>The standard deviation is the square root of the variance and is used to measure distance from the mean. In a normal distribution 65% of the data lies within 1 standard deviation from the mean,95% within 2 standard deviations, and 99.7% within 3 standard deviations.</p>
-<pre class="sourceCode r"><code class="sourceCode r">std_income &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">sqrt</span>(Var_income),<span class="dv">2</span>)
-
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The standard deviation caluclated by hand: &quot;</span>, std_income))</code></pre>
-<pre><code>#&gt; [1] &quot;The standard deviation caluclated by hand: 284.66&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># we can also use the built in function in R</span>
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The standard deviation using the R built in function: &quot;</span>,<span class="kw">round</span>(<span class="kw">sd</span>(income),<span class="dv">2</span>)))</code></pre>
-<pre><code>#&gt; [1] &quot;The standard deviation using the R built in function: 284.66&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pos_<span class="dv">1</span>_std &lt;-<span class="st"> </span>s_mean <span class="op">+</span><span class="st"> </span>std_income
-pos_<span class="dv">2</span>_std &lt;-<span class="st"> </span>s_mean <span class="op">+</span><span class="st"> </span>std_income <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
-neg_<span class="dv">1</span>_std &lt;-<span class="st"> </span>s_mean <span class="op">-</span><span class="st"> </span>std_income
-neg_<span class="dv">2</span>_std &lt;-<span class="st"> </span>s_mean <span class="op">-</span><span class="st"> </span>std_income <span class="op">*</span><span class="st"> </span><span class="dv">2</span></code></pre>
-<p>Let’s visualize this. I add in lines for one and two standard deviations but, because the data are not normal the standard deviations fall outside of the ranges defined by the three sigma rule of thumb.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(income, <span class="dt">probability =</span> <span class="ot">TRUE</span>, <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>)
-<span class="kw">lines</span>(<span class="kw">density</span>(income))
-<span class="kw">abline</span>(<span class="dt">v =</span> s_mean, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>, )
-<span class="kw">abline</span>(<span class="dt">v =</span> pos_<span class="dv">1</span>_std, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">v =</span> neg_<span class="dv">1</span>_std, <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">v =</span> pos_<span class="dv">2</span>_std, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)
-<span class="kw">abline</span>(<span class="dt">v =</span> neg_<span class="dv">2</span>_std, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lty =</span> <span class="st">&quot;dashed&quot;</span>)
-<span class="kw">text</span>(s_mean <span class="op">-</span><span class="st"> </span><span class="dv">20</span>,.<span class="dv">0015</span>, <span class="kw">expression</span>(mu))
-<span class="kw">text</span>(pos_<span class="dv">1</span>_std <span class="op">-</span><span class="st"> </span><span class="dv">40</span>,.<span class="dv">0015</span>, <span class="kw">expression</span>(mu <span class="op">+</span><span class="st"> </span>sigma))
-<span class="kw">text</span>(neg_<span class="dv">1</span>_std <span class="op">-</span><span class="st"> </span><span class="dv">40</span>,.<span class="dv">0015</span>, <span class="kw">expression</span>(mu <span class="op">-</span><span class="st"> </span>sigma))
-<span class="kw">text</span>(pos_<span class="dv">2</span>_std <span class="op">-</span><span class="st"> </span><span class="dv">40</span>,.<span class="dv">0015</span>, <span class="kw">expression</span>(mu <span class="op">+</span><span class="st"> </span><span class="dv">2</span><span class="op">*</span>sigma))</code></pre>
-<p><img src="lesson4_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 
 </div>
 </div>
 <div id="lesson-6-normal-distribution" class="section level2">
 <h2><span class="header-section-number">3.3</span> Lesson 6 Normal Distribution</h2>
-<p>In this exercise we will find the probability of a given observation within a normal distribution. All definitions and data come from the original Udacity lesson and can be found <a href="https://storage.googleapis.com/supplemental_media/udacityu/1478678538/Lesson6.pdf" title="Lesson6.pdf">here.</a></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;ggfortify&quot;)</span>
-<span class="co">#library(ggfortify)</span></code></pre>
 <div id="probability-distribution-function." class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Probability Distribution Function.</h3>
-<p>The probability distribution function is a normal curve with an area of 1 beneath it, to represent the cumulative frequency of values.</p>
 <div id="data-2" class="section level4">
 <h4><span class="header-section-number">3.3.1.1</span> Data</h4>
-<pre class="sourceCode r"><code class="sourceCode r">mean=<span class="fl">1.85</span>; sd=.<span class="dv">15</span>
-lb=<span class="fl">1.7</span>; ub=<span class="dv">2</span>
-
-<span class="co">#generate student heights</span>
-x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="op">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="dt">length=</span><span class="dv">100</span>)<span class="op">*</span>sd <span class="op">+</span><span class="st"> </span>mean
-hx &lt;-<span class="st"> </span><span class="kw">dnorm</span>(x,mean,sd)</code></pre>
 </div>
 <div id="create-a-density-plot" class="section level4">
 <h4><span class="header-section-number">3.3.1.2</span> Create a density plot</h4>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(x, hx, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Student Height Values&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Density&quot;</span>,
-  <span class="dt">main=</span><span class="st">&quot;Probability Distribution&quot;</span>)
-<span class="kw">lines</span>(x, hx)
-<span class="kw">polygon</span>(<span class="kw">c</span>(lb,x,ub), <span class="kw">c</span>(<span class="dv">0</span>,hx,<span class="dv">0</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>) </code></pre>
-<p><img src="lesson6_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 </div>
 <div id="finding-the-probability" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Finding the probability</h3>
-<p>If given an observation, you can find the probability and show the area below, above, and between particular observations. To do this you must first calculated the z-score</p>
 <div id="z-score" class="section level4">
 <h4><span class="header-section-number">3.3.2.1</span> Z-Score</h4>
-<p><span class="math display">\[ z=\frac{x-\mu}{\sigma}\]</span>
-The z-score is calculated by taking the observation minus the mean and dividing by the standard deviation. If given an observation of 2.05 meters the z-score would be calculated as follows:</p>
-<pre class="sourceCode r"><code class="sourceCode r">obs1 &lt;-<span class="st"> </span><span class="fl">2.05</span>
-obs1_zscore &lt;-<span class="st"> </span><span class="kw">round</span>((obs1 <span class="op">-</span><span class="st"> </span>mean)<span class="op">/</span>sd, <span class="dv">2</span>)
-
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The Z-Score for a student with the Height of 2.05 meters is: &quot;</span>, obs1_zscore))</code></pre>
-<pre><code>#&gt; [1] &quot;The Z-Score for a student with the Height of 2.05 meters is: 1.33&quot;</code></pre>
 </div>
 <div id="proportion-using-a-z-table" class="section level4">
 <h4><span class="header-section-number">3.3.2.2</span> Proportion using a z-table</h4>
-<p>From this we know that a height of 2.05 is 1.33 standard deviations away from the mean. With this information we can use a z-table to determine the proportion of students that are shorter than this. The z-table can be found <a href="https://s3.amazonaws.com/udacity-hosted-downloads/ZTable.jpg," title="ztable">here.</a></p>
-<p>From the z-table we get a proportion of .9082 or 90.82 percent. A person with the height of 2.05 is taller than 90.82 percent of the students.
-We can calculate this in R using the pnorm function. It will give a more exact number than when using the table.</p>
 </div>
 <div id="proportion-using-pnorm" class="section level4">
 <h4><span class="header-section-number">3.3.2.3</span> Proportion using pnorm</h4>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#you can also use pnorm to get the proportion rather than looking it up in a z-table</span>
-obs1_spor &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(obs1, mean, sd),<span class="dv">4</span>)
-<span class="kw">print</span>(<span class="kw">paste0</span>(<span class="st">&quot;The proportion of students shorter than 2.05 meters is: &quot;</span>, obs1_spor))</code></pre>
-<pre><code>#&gt; [1] &quot;The proportion of students shorter than 2.05 meters is: 0.9088&quot;</code></pre>
 </div>
 <div id="plotting-the-percentage" class="section level4">
 <h4><span class="header-section-number">3.3.2.4</span> Plotting the percentage</h4>
-<p>By multiplying the proportion by 100 you can get the percentage of students that are shorter than 2.05 meters. You can also find the percentage of students that are taller than 2.05 meters by subtracting the proportion from 1.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># a plot of the data</span>
-<span class="kw">plot</span>(x, hx, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Student Height Values&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Density&quot;</span>,
-  <span class="dt">main=</span><span class="st">&quot;Percentage above and below 2.05 meters&quot;</span>)
-
-<span class="co"># to plot the proportion I grab the samples that are above and below the observation. </span>
-i &lt;-<span class="st"> </span>x <span class="op">&lt;=</span><span class="st"> </span>obs1
-o &lt;-<span class="st"> </span>x <span class="op">&gt;=</span><span class="st"> </span>obs1
-<span class="kw">lines</span>(x, hx)
-
-<span class="co"># I use the gathered high and low observations to make polygons showing the area.</span>
-<span class="kw">polygon</span>(<span class="kw">c</span>(lb,x[i],obs1), <span class="kw">c</span>(<span class="dv">0</span>,hx[i],<span class="dv">0</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>) 
-<span class="kw">polygon</span>(<span class="kw">c</span>(obs1,x[o],ub), <span class="kw">c</span>(<span class="dv">0</span>,hx[o],<span class="dv">0</span>), <span class="dt">col=</span><span class="st">&quot;yellow&quot;</span>) 
-
-<span class="co">#label the percentage</span>
-taller_obs1 &lt;-<span class="st"> </span><span class="kw">round</span>((<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>obs1_spor) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dv">2</span>)
-shorter_obs1 &lt;-<span class="st"> </span>obs1_spor <span class="op">*</span><span class="st"> </span><span class="dv">100</span>
-<span class="kw">text</span>(<span class="fl">1.8</span>,.<span class="dv">3</span>, <span class="dt">labels =</span> shorter_obs1, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)
-<span class="kw">text</span>(<span class="fl">2.1</span>,.<span class="dv">3</span>, <span class="dt">labels =</span> taller_obs1, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre>
-<p><img src="lesson6_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="proportion-of-a-range" class="section level4">
 <h4><span class="header-section-number">3.3.2.5</span> Proportion of a range</h4>
-<p>You can find the proportion of students that fall between a given range by subtraction the proportion of the first observation from the proportion of the second observation.</p>
-<pre class="sourceCode r"><code class="sourceCode r">obs2 &lt;-<span class="st"> </span><span class="fl">1.87</span>
-obs2_spor &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="kw">pnorm</span>(obs2, mean, sd),<span class="dv">4</span>)
-
-<span class="co"># a plot of the data</span>
-<span class="kw">plot</span>(x, hx, <span class="dt">type=</span><span class="st">&quot;n&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;Student Height Values&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Density&quot;</span>,
-  <span class="dt">main=</span><span class="st">&quot;Percentage between 1.87 and 2.05 meters&quot;</span>)
-
-<span class="co"># to plot the proportion I grab the samples that are between the observations. </span>
-i_diff &lt;-<span class="st"> </span>x <span class="op">&gt;=</span><span class="st"> </span>obs2 <span class="op">&amp;</span><span class="st"> </span>x <span class="op">&lt;=</span><span class="st"> </span>obs1
-
-<span class="kw">lines</span>(x, hx)
-
-<span class="co"># I use the gathered range of observations to make polygons showing the area.</span>
-<span class="kw">polygon</span>(<span class="kw">c</span>(obs2,x[i_diff],obs1), <span class="kw">c</span>(<span class="dv">0</span>,hx[i_diff],<span class="dv">0</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>) 
-
-
-<span class="co">#label the percentage</span>
-between_obs &lt;-<span class="st"> </span><span class="kw">round</span>((obs1_spor <span class="op">-</span><span class="st"> </span>obs2_spor) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>, <span class="dv">2</span>)
-
-<span class="kw">text</span>(<span class="fl">1.95</span>,.<span class="dv">3</span>, <span class="dt">labels =</span> between_obs, <span class="dt">col =</span> <span class="st">&quot;white&quot;</span>)</code></pre>
-<p><img src="lesson6_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -513,19 +355,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

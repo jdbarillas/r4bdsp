@@ -7,6 +7,7 @@ In this exercise we will start by looking at the characteristics of our dataset.
 
 
 ### Data
+
 We start by assigning our data to Petals, a list of petal counts from flowers.
 
 ```r
@@ -24,6 +25,7 @@ Petals <- c(15, 16, 17,
 
 
 ### Frequency
+
 The frequency of a data set is the number of times a certain outcome occurs.
 
 
@@ -53,6 +55,7 @@ print(paste0("The frequency of flowers with 15 petals is: ", PetalFreq))
 
 
 ### Proportions
+
 A proportion is the fraction of counts over the total sample.
 
 
@@ -70,6 +73,7 @@ print(paste0("The proportion of flowers with 15 petals is: ", PetalProp))
 
 
 ### Percentage
+
 A proportion can be turned into a percentage by multiplying the proportion by 100.
 
 
@@ -86,6 +90,7 @@ print(paste0("The percentage of flowers with 15 petals is: ", PetalPerc, "%"))
 
 
 ### Histogram
+
 A histogram is a graphical representation of the distribution of data, discrete intervals (bins) are decided upon to form widths for our boxes. R has the hist() function to make basic histograms. Here are some very simple examples.
 
 
@@ -108,6 +113,7 @@ hist(Petals, breaks = bins, col = "orange")
 
 
 ### Skew
+
 **Positive Skew** - A positive skew is when outliers are present along the right most end of the distribution. The histogram for Petals is an example of a positive skew
 
 **Negative Skew** - A negative skew is when outliers are present along the left most end of the distribution
