@@ -12,7 +12,9 @@ rmd_files: [
     "lesson4.rmd",
     "lesson6.rmd",
     
-    "map_visualizations.Rmd"
+    "map_visualizations.Rmd",
+    
+    "basic_dplyr.Rmd"
   ]
   
 before_chapter_script: "_before.R"
