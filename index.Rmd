@@ -9,4 +9,4 @@ documentclass: book
 
 # Welcome {-}
 
-This is the website for **"R for the Bertelsmann Data Science scholarship Program"**. This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R.
+This is the website for **"R for the Bertelsmann Data Science scholarship Program"**. This book is an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It contains supplemental tutorials on specific topics using R.
