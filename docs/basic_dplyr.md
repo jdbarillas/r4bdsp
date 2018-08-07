@@ -1,12 +1,26 @@
 
----
-output: 
-  html_document: 
-    df_print: paged
----
-# Basic dplyr
+# Basic dplyr {#topics-sql-dplyr}
 
 ## Introduction
+
+This topic focuses on translating Lessons 28-32 of the Bertelsmann Data Science Scholarship Program. These lessons provide the foundation for working with databases using  Structured Query Language (SQL). Like the lessons within the scholarship program, we will using data from the fictional Parch and Posey company. You can access this data by installing the parchposey package from GitHub:
+
+
+```r
+# Be sure to have the devtools package
+install.packages("devtools")
+
+# Then use devtools to install the package from GitHub
+devtools::install_github("jdbarillas/parchposey")
+```
+
+You will learn how to recreate the SQL queries in R using the `dplyr` package from the `tidyverse` in the following ways:
+
+* `dplyr` provides a set of verbs that are combined to solve data manipulation problems. In the **Basic SQL** lesson, you learned about common statements used in SQL such as `SELECT`, `LIMIT`, and more. In [Basic dplyr], you will learn how to translate these common statements to R using dplyr functions.  
+
+In order to get the most of the lessons, you should become familiar with the following:
+
+ * The pipe operator (`%>%`) from the `magrittr` package: The purpose of `%>%` is to 'pipe' an object forward into a function or expression. For example, `data %>% ...` can be read as *take the object `data` and **THEN** do something else with it...*. Loading dplyr also loads in the pipe operator so you don't need to load magrittr as well. Usage of the pipe will lead to concise code that's easy to follow. For more information on the pipe, refer to the [Pipes](http://r4ds.had.co.nz/pipes.html) chapter in [R for Data Science](http://r4ds.had.co.nz/)
 
 This chapter will mimic the **Basic SQL** lesson by using function from the dplyr package. As specified in the [introduction](#sql-intro), the dplyr verbs are best when used with the pipe-operator `%>%`. 
 
@@ -140,7 +154,7 @@ FROM orders
 <div class="knitsql-table">
 
 
-Table: (\#tab:unnamed-chunk-10)Displaying records 1 - 10
+Table: (\#tab:unnamed-chunk-11)Displaying records 1 - 10
 
 id    account_id  occurred_at         
 ---  -----------  --------------------
@@ -197,7 +211,7 @@ LIMIT 3;
 <div class="knitsql-table">
 
 
-Table: (\#tab:unnamed-chunk-12)3 records
+Table: (\#tab:unnamed-chunk-13)3 records
 
 id    account_id  occurred_at            standard_qty   gloss_qty   poster_qty   total   standard_amt_usd   gloss_amt_usd   poster_amt_usd   total_amt_usd
 ---  -----------  --------------------  -------------  ----------  -----------  ------  -----------------  --------------  ---------------  --------------
@@ -242,7 +256,7 @@ LIMIT 15
 <div class="knitsql-table">
 
 
-Table: (\#tab:unnamed-chunk-14)Displaying records 1 - 10
+Table: (\#tab:unnamed-chunk-15)Displaying records 1 - 10
 
 id    account_id  occurred_at           channel 
 ---  -----------  --------------------  --------

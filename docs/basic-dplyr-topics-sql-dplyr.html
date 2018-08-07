@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R for the Bertelsmann Data Science Scholarship Program</title>
+  <meta name="description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="R for the Bertelsmann Data Science Scholarship Program" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R." />
+  <meta name="github-repo" content="jdbarillas/r4bdsp" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R for the Bertelsmann Data Science Scholarship Program" />
+  
+  <meta name="twitter:description" content="This book will be an R-based supplemental resource for those participating in the Bertelsmann Data Science Scholarship Program. It will contain sections of the curriculum translated into R and also supplemental tutorials on specific topics using R." />
+  
+
+<meta name="author" content="TBD">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="topics-map-viz.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="part"><span><b>I Specific Topics</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#contributors"><i class="fa fa-check"></i><b>1.1</b> Contributors</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#afton---map-visualizations"><i class="fa fa-check"></i><b>1.1.1</b> Afton - <span>Map Visualizations</span></a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#jolynn---udacity-even-lessons"><i class="fa fa-check"></i><b>1.1.2</b> Jolynn - <span>Udacity Even Lessons</span></a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#how-to-contribute"><i class="fa fa-check"></i><b>1.1.3</b> How to contribute</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="topics-lessons.html"><a href="topics-lessons.html"><i class="fa fa-check"></i><b>2</b> Udacity Even Lessons</a><ul>
+<li class="chapter" data-level="2.1" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-2-visualization"><i class="fa fa-check"></i><b>2.1</b> Lesson 2 Visualization</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="topics-lessons.html"><a href="topics-lessons.html#data"><i class="fa fa-check"></i><b>2.1.1</b> Data</a></li>
+<li class="chapter" data-level="2.1.2" data-path="topics-lessons.html"><a href="topics-lessons.html#frequency"><i class="fa fa-check"></i><b>2.1.2</b> Frequency</a></li>
+<li class="chapter" data-level="2.1.3" data-path="topics-lessons.html"><a href="topics-lessons.html#proportions"><i class="fa fa-check"></i><b>2.1.3</b> Proportions</a></li>
+<li class="chapter" data-level="2.1.4" data-path="topics-lessons.html"><a href="topics-lessons.html#percentage"><i class="fa fa-check"></i><b>2.1.4</b> Percentage</a></li>
+<li class="chapter" data-level="2.1.5" data-path="topics-lessons.html"><a href="topics-lessons.html#histogram"><i class="fa fa-check"></i><b>2.1.5</b> Histogram</a></li>
+<li class="chapter" data-level="2.1.6" data-path="topics-lessons.html"><a href="topics-lessons.html#skew"><i class="fa fa-check"></i><b>2.1.6</b> Skew</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-4-variability"><i class="fa fa-check"></i><b>2.2</b> Lesson 4 Variability</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="topics-lessons.html"><a href="topics-lessons.html#data-1"><i class="fa fa-check"></i><b>2.2.1</b> Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="topics-lessons.html"><a href="topics-lessons.html#interquartile-range"><i class="fa fa-check"></i><b>2.2.2</b> Interquartile range</a></li>
+<li class="chapter" data-level="2.2.3" data-path="topics-lessons.html"><a href="topics-lessons.html#box-plot"><i class="fa fa-check"></i><b>2.2.3</b> Box Plot</a></li>
+<li class="chapter" data-level="2.2.4" data-path="topics-lessons.html"><a href="topics-lessons.html#outliers"><i class="fa fa-check"></i><b>2.2.4</b> Outliers</a></li>
+<li class="chapter" data-level="2.2.5" data-path="topics-lessons.html"><a href="topics-lessons.html#variance"><i class="fa fa-check"></i><b>2.2.5</b> Variance</a></li>
+<li class="chapter" data-level="2.2.6" data-path="topics-lessons.html"><a href="topics-lessons.html#standard-deviation"><i class="fa fa-check"></i><b>2.2.6</b> Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="topics-lessons.html"><a href="topics-lessons.html#lesson-6-normal-distribution"><i class="fa fa-check"></i><b>2.3</b> Lesson 6 Normal Distribution</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="topics-lessons.html"><a href="topics-lessons.html#probability-distribution-function."><i class="fa fa-check"></i><b>2.3.1</b> Probability Distribution Function.</a></li>
+<li class="chapter" data-level="2.3.2" data-path="topics-lessons.html"><a href="topics-lessons.html#finding-the-probability"><i class="fa fa-check"></i><b>2.3.2</b> Finding the probability</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="topics-map-viz.html"><a href="topics-map-viz.html"><i class="fa fa-check"></i><b>3</b> Map Visualizations</a><ul>
+<li class="chapter" data-level="3.1" data-path="topics-map-viz.html"><a href="topics-map-viz.html#background"><i class="fa fa-check"></i><b>3.1</b> Background</a></li>
+<li class="chapter" data-level="3.2" data-path="topics-map-viz.html"><a href="topics-map-viz.html#how-maps-work"><i class="fa fa-check"></i><b>3.2</b> How Maps Work</a></li>
+<li class="chapter" data-level="3.3" data-path="topics-map-viz.html"><a href="topics-map-viz.html#plotting-data-over-a-map"><i class="fa fa-check"></i><b>3.3</b> Plotting Data Over a Map</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="basic-dplyr-topics-sql-dplyr.html"><a href="basic-dplyr-topics-sql-dplyr.html"><i class="fa fa-check"></i><b>4</b> Basic dplyr {topics-sql-dplyr}</a><ul>
+<li class="chapter" data-level="4.1" data-path="basic-dplyr-topics-sql-dplyr.html"><a href="basic-dplyr-topics-sql-dplyr.html#introduction-1"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="basic-dplyr-topics-sql-dplyr.html"><a href="basic-dplyr-topics-sql-dplyr.html#importing-parch-and-posey-data"><i class="fa fa-check"></i><b>4.2</b> Importing Parch and Posey data</a></li>
+<li class="chapter" data-level="4.3" data-path="basic-dplyr-topics-sql-dplyr.html"><a href="basic-dplyr-topics-sql-dplyr.html#select-columns-from-tables-with-select"><i class="fa fa-check"></i><b>4.3</b> Select columns from tables with <code>select()</code></a></li>
+<li class="chapter" data-level="4.4" data-path="basic-dplyr-topics-sql-dplyr.html"><a href="basic-dplyr-topics-sql-dplyr.html#limit-the-number-of-rows-returned-with-head"><i class="fa fa-check"></i><b>4.4</b> Limit the number of rows returned with <code>head()</code></a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R for the Bertelsmann Data Science Scholarship Program</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basic-dplyr-topics-sql-dplyr" class="section level1">
+<h1><span class="header-section-number">4</span> Basic dplyr {topics-sql-dplyr}</h1>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>This topic focuses on translating Lessons 28-32 of the Bertelsmann Data Science Scholarship Program. These lessons provide the foundation for working with databases using Structured Query Language (SQL). Like the lessons within the scholarship program, we will using data from the fictional Parch and Posey company. You can access this data by installing the parchposey package from GitHub:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Be sure to have the devtools package</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
+
+<span class="co"># Then use devtools to install the package from GitHub</span>
+devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;jdbarillas/parchposey&quot;</span>)</code></pre>
+<p>You will learn how to recreate the SQL queries in R using the <code>dplyr</code> package from the <code>tidyverse</code> in the following ways:</p>
+<ul>
+<li><code>dplyr</code> provides a set of verbs that are combined to solve data manipulation problems. In the <strong>Basic SQL</strong> lesson, you learned about common statements used in SQL such as <code>SELECT</code>, <code>LIMIT</code>, and more. In [Basic dplyr], you will learn how to translate these common statements to R using dplyr functions.</li>
+</ul>
+<p>In order to get the most of the lessons, you should become familiar with the following:</p>
+<ul>
+<li>The pipe operator (<code>%&gt;%</code>) from the <code>magrittr</code> package: The purpose of <code>%&gt;%</code> is to ‘pipe’ an object forward into a function or expression. For example, <code>data %&gt;% ...</code> can be read as <em>take the object <code>data</code> and <strong>THEN</strong> do something else with it…</em>. Loading dplyr also loads in the pipe operator so you don’t need to load magrittr as well. Usage of the pipe will lead to concise code that’s easy to follow. For more information on the pipe, refer to the <a href="http://r4ds.had.co.nz/pipes.html">Pipes</a> chapter in <a href="http://r4ds.had.co.nz/">R for Data Science</a></li>
+</ul>
+<p>This chapter will mimic the <strong>Basic SQL</strong> lesson by using function from the dplyr package. As specified in the <a href="#sql-intro">introduction</a>, the dplyr verbs are best when used with the pipe-operator <code>%&gt;%</code>.</p>
+<p>We will using Parch and Posey data in this and all other SQL lessons, so make sure that the <code>parchposey</code> package is installed and loaded. The same applies to the <code>dplyr</code> package.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load the parchposey and dplyr packages</span>
+<span class="kw">library</span>(parchposey)
+<span class="kw">library</span>(dplyr)</code></pre>
+</div>
+<div id="importing-parch-and-posey-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Importing Parch and Posey data</h2>
+<p>Now that you’ve loaded <code>parchposey</code>, you’re able to load the necessary tables into R using the <code>data(table_name)</code> function. For example, <code>data(orders)</code> will load the <strong><em>orders</em></strong> table into your environment. Below you can see that the table has been loaded and that it contains the same variable as the tables in the SQL editor.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;orders&quot;</span>) <span class="co"># Add the orders table to you environment</span>
+<span class="kw">glimpse</span>(orders) <span class="co"># Get a glimpse of the loaded table</span></code></pre>
+<pre><code>#&gt; Observations: 6,912
+#&gt; Variables: 11
+#&gt; $ id               &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14...
+#&gt; $ account_id       &lt;int&gt; 1001, 1001, 1001, 1001, 1001, 1001, 1001, 100...
+#&gt; $ occurred_at      &lt;dttm&gt; 2015-10-06 17:31:14, 2015-11-05 03:34:33, 20...
+#&gt; $ standard_qty     &lt;int&gt; 123, 190, 85, 144, 108, 103, 101, 95, 91, 94,...
+#&gt; $ gloss_qty        &lt;int&gt; 22, 41, 47, 32, 29, 24, 33, 47, 16, 46, 36, 3...
+#&gt; $ poster_qty       &lt;int&gt; 24, 57, NA, NA, 28, 46, 92, 151, 22, 8, NA, 3...
+#&gt; $ total            &lt;int&gt; 169, 288, 132, 176, 165, 173, 226, 293, 129, ...
+#&gt; $ standard_amt_usd &lt;dbl&gt; 613.77, 948.10, 424.15, 718.56, 538.92, 513.9...
+#&gt; $ gloss_amt_usd    &lt;dbl&gt; 164.78, 307.09, 352.03, 239.68, 217.21, 179.7...
+#&gt; $ poster_amt_usd   &lt;dbl&gt; 194.88, 462.84, 0.00, 0.00, 227.36, 373.52, 7...
+#&gt; $ total_amt_usd    &lt;dbl&gt; 973.43, 1718.03, 776.18, 958.24, 983.49, 1067...</code></pre>
+</div>
+<div id="select-columns-from-tables-with-select" class="section level2">
+<h2><span class="header-section-number">4.3</span> Select columns from tables with <code>select()</code></h2>
+<p>From the <strong>Basic SQL</strong> lesson, we know that every SQL query will at least have a <code>SELECT</code> and <code>FROM</code> statement. We will follow the same convention for now while introducing our first dplyr verb function: <code>select</code>.</p>
+<blockquote>
+<p><code>select()</code> is able to take 2 arguments:<br />
+1. <code>.data</code> which points to a table<br />
+2. the columns to select.</p>
+</blockquote>
+<p>To see how this works, let’s use <code>select</code> with the <strong>orders</strong> table as the value for <code>.data</code> but no other values.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(<span class="dt">.data =</span> orders)</code></pre>
+<pre><code>#&gt; # A tibble: 6,912 x 0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Translates to:</span>
+## SELECT FROM orders: </code></pre>
+<p>As you can see, the function returned the full table with 6,912 rows but no columns. This is because <code>select</code> is usually used to keep only the columns specified within the function. Therefore, since no columns were specified then no columns were returned.</p>
+<p>However, there are a number of special “helper” functions that work inside the function to select columns based on different criteria. One such helper function, <code>everything()</code>, is the equivalent to the asterisk (*) used in a query to select all columns within a table.</p>
+<p>Therefore, the following SQL query</p>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * 
+<span class="kw">FROM</span> orders</code></pre>
+<p>is equivalent to</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(<span class="dt">.data =</span> orders, <span class="kw">everything</span>())
+<span class="co"># SELECT FROM orders: everything!</span></code></pre>
+<p>or using the pipe</p>
+<pre class="sourceCode r"><code class="sourceCode r">orders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="kw">everything</span>())
+<span class="co"># FROM orders, SELECT everything!</span></code></pre>
+<pre><code>#&gt; # A tibble: 6,912 x 11
+#&gt;       id account_id occurred_at         standard_qty gloss_qty poster_qty
+#&gt;    &lt;int&gt;      &lt;int&gt; &lt;dttm&gt;                     &lt;int&gt;     &lt;int&gt;      &lt;int&gt;
+#&gt;  1     1       1001 2015-10-06 17:31:14          123        22         24
+#&gt;  2     2       1001 2015-11-05 03:34:33          190        41         57
+#&gt;  3     3       1001 2015-12-04 04:21:55           85        47         NA
+#&gt;  4     4       1001 2016-01-02 01:18:24          144        32         NA
+#&gt;  5     5       1001 2016-02-01 19:27:27          108        29         28
+#&gt;  6     6       1001 2016-03-02 15:29:32          103        24         46
+#&gt;  7     7       1001 2016-04-01 11:20:18          101        33         92
+#&gt;  8     8       1001 2016-05-01 15:55:51           95        47        151
+#&gt;  9     9       1001 2016-05-31 21:22:48           91        16         22
+#&gt; 10    10       1001 2016-06-30 12:32:05           94        46          8
+#&gt; # ... with 6,902 more rows, and 5 more variables: total &lt;int&gt;,
+#&gt; #   standard_amt_usd &lt;dbl&gt;, gloss_amt_usd &lt;dbl&gt;, poster_amt_usd &lt;dbl&gt;,
+#&gt; #   total_amt_usd &lt;dbl&gt;</code></pre>
+<p>You may have noticed the change in order in the last chunk of code, where the name of the table comes before the verb.</p>
+<p>The reason for doing this is to facilitate the reading of the code for someone who may not have a background in programming. We know that <strong>orders</strong> is a table within our environment and that the <code>%&gt;%</code> operator can be read as <em>THEN</em>. Putting these together we can read the above as:</p>
+<blockquote>
+<p>Take the <em>orders</em> table and <strong>THEN</strong><br />
+  <strong>select</strong> everything within the table</p>
+</blockquote>
+<p>We don’t need to limit ourselves to only one pipe within a call. We can keep adding functions as actions to be taken on the <strong>orders</strong> table.</p>
+<p>Remember that for both SQL and R, the <code>SELECT/select()</code> statement/function is where you put the <strong>columns</strong> for which you would like to show the data.</p>
+<p><strong>Your Turn</strong></p>
+<p>Convert the following query to R code. Make sure the R output matches the SQL output and try to use the <code>%&gt;%</code> operator. Protip: In RStudio, use <em>CTRL+SHIFT+M</em> to add a pipe.</p>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">id</span>, account_id, occurred_at
+<span class="kw">FROM</span> orders</code></pre>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:unnamed-chunk-11">Table 4.1: </span>Displaying records 1 - 10</caption>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">account_id</th>
+<th align="left">occurred_at</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">1001</td>
+<td align="left">2015-10-06 17:31:14</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">1001</td>
+<td align="left">2015-11-05 03:34:33</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">1001</td>
+<td align="left">2015-12-04 04:21:55</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">1001</td>
+<td align="left">2016-01-02 01:18:24</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="right">1001</td>
+<td align="left">2016-02-01 19:27:27</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="right">1001</td>
+<td align="left">2016-03-02 15:29:32</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="right">1001</td>
+<td align="left">2016-04-01 11:20:18</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="right">1001</td>
+<td align="left">2016-05-01 15:55:51</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="right">1001</td>
+<td align="left">2016-05-31 21:22:48</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="right">1001</td>
+<td align="left">2016-06-30 12:32:05</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">orders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(id, account_id, occurred_at)</code></pre>
+<pre><code>#&gt; # A tibble: 6,912 x 3
+#&gt;       id account_id occurred_at        
+#&gt;    &lt;int&gt;      &lt;int&gt; &lt;dttm&gt;             
+#&gt;  1     1       1001 2015-10-06 17:31:14
+#&gt;  2     2       1001 2015-11-05 03:34:33
+#&gt;  3     3       1001 2015-12-04 04:21:55
+#&gt;  4     4       1001 2016-01-02 01:18:24
+#&gt;  5     5       1001 2016-02-01 19:27:27
+#&gt;  6     6       1001 2016-03-02 15:29:32
+#&gt;  7     7       1001 2016-04-01 11:20:18
+#&gt;  8     8       1001 2016-05-01 15:55:51
+#&gt;  9     9       1001 2016-05-31 21:22:48
+#&gt; 10    10       1001 2016-06-30 12:32:05
+#&gt; # ... with 6,902 more rows</code></pre>
+</div>
+<div id="limit-the-number-of-rows-returned-with-head" class="section level2">
+<h2><span class="header-section-number">4.4</span> Limit the number of rows returned with <code>head()</code></h2>
+<p>As you were taught in the course, the <strong>LIMIT</strong> statement is useful when you want to see just the first few rows of a table. In SQL, this can be much faster for loading than if we load the entire dataset. This statement also holds true within R.</p>
+<p>For example, the following query will return all columns for the first 3 rows from the orders table.</p>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> *
+<span class="kw">FROM</span> orders
+<span class="kw">LIMIT</span> <span class="dv">3</span>;</code></pre>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:unnamed-chunk-13">Table 4.2: </span>3 records</caption>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">account_id</th>
+<th align="left">occurred_at</th>
+<th align="right">standard_qty</th>
+<th align="right">gloss_qty</th>
+<th align="right">poster_qty</th>
+<th align="right">total</th>
+<th align="right">standard_amt_usd</th>
+<th align="right">gloss_amt_usd</th>
+<th align="right">poster_amt_usd</th>
+<th align="right">total_amt_usd</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">1001</td>
+<td align="left">2015-10-06 17:31:14</td>
+<td align="right">123</td>
+<td align="right">22</td>
+<td align="right">24</td>
+<td align="right">169</td>
+<td align="right">613.77</td>
+<td align="right">164.78</td>
+<td align="right">194.88</td>
+<td align="right">973.43</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">1001</td>
+<td align="left">2015-11-05 03:34:33</td>
+<td align="right">190</td>
+<td align="right">41</td>
+<td align="right">57</td>
+<td align="right">288</td>
+<td align="right">948.10</td>
+<td align="right">307.09</td>
+<td align="right">462.84</td>
+<td align="right">1718.03</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">1001</td>
+<td align="left">2015-12-04 04:21:55</td>
+<td align="right">85</td>
+<td align="right">47</td>
+<td align="right">NA</td>
+<td align="right">132</td>
+<td align="right">424.15</td>
+<td align="right">352.03</td>
+<td align="right">0.00</td>
+<td align="right">776.18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The equivalent function in R is <code>head()</code>, where the argument needed is the number of rows to return. To show just the first 10 rows of the orders table with all columns, you could write the following code:</p>
+<pre class="sourceCode r"><code class="sourceCode r">orders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="kw">everything</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>(<span class="dv">3</span>)</code></pre>
+<pre><code>#&gt; # A tibble: 3 x 11
+#&gt;      id account_id occurred_at         standard_qty gloss_qty poster_qty
+#&gt;   &lt;int&gt;      &lt;int&gt; &lt;dttm&gt;                     &lt;int&gt;     &lt;int&gt;      &lt;int&gt;
+#&gt; 1     1       1001 2015-10-06 17:31:14          123        22         24
+#&gt; 2     2       1001 2015-11-05 03:34:33          190        41         57
+#&gt; 3     3       1001 2015-12-04 04:21:55           85        47         NA
+#&gt; # ... with 5 more variables: total &lt;int&gt;, standard_amt_usd &lt;dbl&gt;,
+#&gt; #   gloss_amt_usd &lt;dbl&gt;, poster_amt_usd &lt;dbl&gt;, total_amt_usd &lt;dbl&gt;</code></pre>
+<p><strong>Your Turn</strong></p>
+<p>Convert the following query to R code. Make sure the R output matches the SQL output.</p>
+<pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> *
+<span class="kw">FROM</span> web_events
+<span class="kw">LIMIT</span> <span class="dv">15</span></code></pre>
+<div class="knitsql-table">
+<table>
+<caption><span id="tab:unnamed-chunk-15">Table 4.3: </span>Displaying records 1 - 10</caption>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">account_id</th>
+<th align="left">occurred_at</th>
+<th align="left">channel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">1001</td>
+<td align="left">2015-10-06 17:13:58</td>
+<td align="left">direct</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">1001</td>
+<td align="left">2015-11-05 03:08:26</td>
+<td align="left">direct</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">1001</td>
+<td align="left">2015-12-04 03:57:24</td>
+<td align="left">direct</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">1001</td>
+<td align="left">2016-01-02 00:55:03</td>
+<td align="left">direct</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="right">1001</td>
+<td align="left">2016-02-01 19:02:33</td>
+<td align="left">direct</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="right">1001</td>
+<td align="left">2016-03-02 15:15:22</td>
+<td align="left">direct</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="right">1001</td>
+<td align="left">2016-04-01 10:58:55</td>
+<td align="left">direct</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="right">1001</td>
+<td align="left">2016-05-01 15:26:44</td>
+<td align="left">direct</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="right">1001</td>
+<td align="left">2016-05-31 20:53:47</td>
+<td align="left">direct</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="right">1001</td>
+<td align="left">2016-06-30 12:09:45</td>
+<td align="left">direct</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre class="sourceCode r"><code class="sourceCode r">web_events <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="kw">everything</span>()) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="kw">head</span>(<span class="dv">15</span>)</code></pre>
+<pre><code>#&gt; # A tibble: 15 x 4
+#&gt;       id account_id occurred_at         channel
+#&gt;    &lt;int&gt;      &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  
+#&gt;  1     1       1001 2015-10-06 17:13:58 direct 
+#&gt;  2     2       1001 2015-11-05 03:08:26 direct 
+#&gt;  3     3       1001 2015-12-04 03:57:24 direct 
+#&gt;  4     4       1001 2016-01-02 00:55:03 direct 
+#&gt;  5     5       1001 2016-02-01 19:02:33 direct 
+#&gt;  6     6       1001 2016-03-02 15:15:22 direct 
+#&gt;  7     7       1001 2016-04-01 10:58:55 direct 
+#&gt;  8     8       1001 2016-05-01 15:26:44 direct 
+#&gt;  9     9       1001 2016-05-31 20:53:47 direct 
+#&gt; 10    10       1001 2016-06-30 12:09:45 direct 
+#&gt; 11    11       1001 2016-07-30 03:06:26 direct 
+#&gt; 12    12       1001 2016-08-28 06:42:42 direct 
+#&gt; 13    13       1001 2016-09-26 23:14:59 direct 
+#&gt; 14    14       1001 2016-10-26 20:21:09 direct 
+#&gt; 15    15       1001 2016-11-25 22:52:29 direct</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="topics-map-viz.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

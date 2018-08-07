@@ -15,6 +15,10 @@ This part of the book provides tutorials on specific topics using R. These tutor
 
 >My name is Jolynn. I am a spatial data analyst with a masters in GIS from Penn State, where I studied remote sensing and spatial statistics. You can see some of my maps on my [website]( https://jolynns1.wixsite.com/mgis) or find me on [LinkedIn]( https://www.linkedin.com/in/jolynnschmidt/).
 
+### Josh - [Basic dplyr](#topics-sql-dplyr)
+
+>My name is Josh and I currently work as the Manager of Data Analysis for [AACSB International](https://www.aacsb.edu/). I hold an MA in Economics from the University of South Florida (Go Bulls!), and have a background in Statistics as well. You can follow me on [Twitter](https://twitter.com/jdbarillas) or add me on [LinkedIn](https://www.linkedin.com/in/jdbarillas/).
+
 ### How to contribute
 
 We are using a shared repository model. Therefore, you can contribute to the book by following these steps:

@@ -1,0 +1,3 @@
+bookdown::gitbook:
+  includes:
+    in_header: [google_analytics.html]
