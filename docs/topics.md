@@ -17,7 +17,7 @@ This part of the book provides tutorials on specific topics using R. These tutor
 
 ### Josh - [Basic dplyr](#topics-sql-dplyr)
 
->My name is Josh and I currently work as the Manager of Data Analysis for [AACSB International](https://www.aacsb.edu/). I hold an MA in Economics from the University of South Florida (Go Bulls!), and have a background in Statistics as well. You can follow me on [Twitter](https://twitter.com/jdbarillas) or add me on [LinkedIn](https://www.linkedin.com/in/jdbarillas/).
+>My name is Josh and I currently work as the Manager of Data Analysis for [AACSB International](https://www.aacsb.edu/). I hold an MA in Economics from the University of South Florida (Go Bulls!), and have a background in Statistics as well. Examples of my work include a [shinydashboard](https://aacsb.shinyapps.io/DataDashboard/), a [blog post written in R Markdown](http://aacsbblogs.typepad.com/dataandresearch/2018/05/aacsb-and-aaup-faculty-salary-comparative-analysis-.html) and [a publication](https://www.aacsb.edu/-/media/aacsb/publications/data-trends-booklet/aacsb%20data%20guide%202018-a4-final.ashx?la=en) with tables and figures made with the tidyverse. You can follow me on [Twitter](https://twitter.com/jdbarillas) or add me on [LinkedIn](https://www.linkedin.com/in/jdbarillas/).
 
 ### How to contribute
 
